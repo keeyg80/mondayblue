@@ -1,0 +1,56 @@
+.link .ul {list-style-type: none;}
+ul li a { color: white;transition: color .2s;}
+a:hover {text-decoration:none;color:#4180CB;}
+
+.footer{
+    background: #152F4F;
+    color:white;
+    }
+
+    
+            
+.about-company i{font-size: 25px;}
+i a{ color:white; transition: color .2s; } 
+a:hover{color: #4180CB;}
+        
+        
+.location i{font-size: 18px;}
+
+
+.copyright p{border-top:1px solid rgba(255,255,255,.1);} 
+        
+
+.nav-link {
+    font-weight: bold;
+}
+
+
+.title {
+    font-size: 84px;
+}
+
+
+
+.full-height {
+    height: 100vh;
+}
+
+.flex-center {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+.position-ref {
+    position: relative;
+}
+
+.top-right {
+    position: absolute;
+    right: 10px;
+    top: 18px;
+}
+
+.content {
+    text-align: center;
+}
