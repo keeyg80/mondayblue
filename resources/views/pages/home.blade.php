@@ -14,6 +14,9 @@
         
 
 <div class="container">  
+        <h1 class="title m-b-md">
+            Featured Jobs
+        </h1>
         <div class="row mb-2">
             <div class="col-md-6">
             <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
