@@ -20,5 +20,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', 'PagesController@home');
 Route::get('/about', 'PagesController@about');
 Route::get('/contact', 'PagesController@contact');
-Route::get('/posts', 'PagesController@posts');
+Route::get('/cards', 'PagesController@cards');
 Route::get('/carouselsitem', 'PagesController@carouselsitem');
+Route::resource('posts','PostsController');
+Auth::routes();
+
+Route::get('/dashboard', 'DashboardController@index');

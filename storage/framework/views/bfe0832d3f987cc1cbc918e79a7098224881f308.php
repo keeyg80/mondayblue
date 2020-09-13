@@ -2,7 +2,9 @@
 
 <?php $__env->startSection('content'); ?>
  
-        <div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-light jumbotronbackground">
+        
+        
+        <div class="jumbotron jumbotronbackground text-center">
             <div class="col-md-5 p-lg-5 mx-auto my-5">
             <h1 class="display-4 font-weight-normal">MondayBlue</h1>
             <p class="lead font-weight-normal">Hiring professional and freelancer portal</p>
@@ -11,41 +13,63 @@
             <div class="product-device shadow-sm d-none d-md-block"></div>
             <div class="product-device product-device-2 shadow-sm d-none d-md-block"></div>
         </div>
+
         
 
 <div class="container">  
-        <div class="row mb-2">
-            <div class="col-md-6">
-            <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
-                <div class="col p-4 d-flex flex-column position-static">
-                <strong class="d-inline-block mb-2 text-primary">Freelancer</strong>
-                <h3 class="mb-0">Logo Designing</h3>
-                <div class="mb-1 text-muted">Posted on : Sept 3 2020</div>
-                <p class="card-text mb-auto">I need someone to design my company's logo.</p>
-                <a href="#" class="stretched-link">Continue reading</a>
-                </div>
-                <div class="col-auto d-none d-lg-block">
-                <svg class="bd-placeholder-img" width="200" height="250" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
-                </div>
+        <h1 class="title m-b-md">
+            Featured Jobs
+        </h1>
+            <div class="row mb-2">
+                <?php if(count($posts)>=1): ?>
+                    <?php $__currentLoopData = $posts; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $post): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 mb-3">
+                            <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-100 position-relative">
+                                <div class="col p-4 d-flex flex-column position-static">
+                                    <strong class="d-inline-block mb-2 text-primary"><?php echo e($post->category); ?></strong>
+                                    <h3 class="mb-auto"><?php echo e($post->title); ?></h3>
+                                    <a href="/posts/<?php echo e($post->id); ?>" class="stretched-link">Continue reading</a>
+                                </div>                        
+                            </div>
+                        </div>
+                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                <?php else: ?> 
+                    <p>No posts found</p>
+                <?php endif; ?>
+
+                
             </div>
-            </div>
-            <div class="col-md-6">
-            <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
-                <div class="col p-4 d-flex flex-column position-static">
-                <strong class="d-inline-block mb-2 text-success">Hiring</strong>
-                <h3 class="mb-0">Web Designer</h3>
-                <div class="mb-1 text-muted">Posted on Sept 5 2020</div>
-                <p class="mb-auto">We are hiring web designer.</p>
-                <a href="#" class="stretched-link">Continue reading</a>
-                </div>
-                <div class="col-auto d-none d-lg-block">
-                <svg class="bd-placeholder-img" width="200" height="250" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
-                </div>
-            </div>
-            </div>
-        </div>
-        </div>
 </div>
+
+<div class="container">
+    <h3 class="title m-b-md">
+        Uploaded Posts
+    </h1>
+    <div class="row">
+        <?php if(count($posts)>=1): ?>
+            <?php $__currentLoopData = $posts; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $post): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 mb-3">
+                    <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-100 position-relative">
+                        <div class="col p-4 d-flex flex-column position-static">
+                            <strong class="d-inline-block mb-2 text-success"><?php echo e($post->category); ?></strong>
+                            <h3 class="mb-0"><?php echo e($post->title); ?></h3>
+                            <div class="mb-1 text-muted">Posted on : <?php echo e($post->created_at); ?></div>
+                            <p class="mb-2"><?php echo e($post->description); ?></p>
+                            <small class="text-secondary mb-auto"><?php echo e($post->body); ?></small>
+                            <a href="/posts/<?php echo e($post->id); ?>" class="stretched-link">Continue reading</a>
+                        </div>                        
+                    </div>
+                </div>
+            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+        <?php else: ?> 
+            <p>No posts found</p>
+        <?php endif; ?>
+    </div>
+</div>
+
+       
+
+
 
 
 <?php $__env->stopSection(); ?>

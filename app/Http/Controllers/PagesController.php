@@ -3,11 +3,12 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Post;
 class PagesController extends Controller
 {
     public function home(){
-        return view ('pages.home');
+        $posts = Post::all();
+        return view('pages.home')->with('posts',$posts);
     }
 
     public function about(){
@@ -18,8 +19,8 @@ class PagesController extends Controller
         return view ('pages.contact');
     }
 
-    public function posts(){
-        return view ('pages.posts');
+    public function cards(){
+        return view ('pages.cards');
     }
 
     public function carouselsitem(){

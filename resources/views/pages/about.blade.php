@@ -59,23 +59,19 @@
         
         <div class="content">
                 
-        <div class="container flex-top position-ref full-height">
-                <div class="row">
-                        <div class="col-xl-4 d-flex justify-content-left text-left mt-5">
-                                <div class="img"><img src="img/Company_logo.png" ></div>
-                        </div>
-                        <div class="col-xl-8 d-flex justify-content-left text-left mt-5">    
-                                <div class="row ">
-                                        <h1>Company Overview</h1>
-                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum dolore maiores adipisci cum quidem. Corrupti error impedit, quo pariatur hic in excepturi, enim voluptate commodi eligendi doloremque animi dolores libero?</p>               
+                <div class="container flex-top position-ref full-height">
+                        <div class="row">
+                                <div class="col-xl-4 d-flex justify-content-left text-left mt-5">
+                                        <div class="img"><img src="img/Company_logo.png" ></div>
                                 </div>
+                                <div class="col-xl-8 d-flex justify-content-left text-left mt-5">    
+                                        <div class="row ">
+                                                <h1>Company Overview</h1>
+                                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum dolore maiores adipisci cum quidem. Corrupti error impedit, quo pariatur hic in excepturi, enim voluptate commodi eligendi doloremque animi dolores libero?</p>               
+                                        </div>
+                                </div>   
                         </div>
-                                               
-                        
-                        
-                        
                 </div>
         </div>
-    
     
 @endsection
