@@ -14,7 +14,204 @@
             <div class="product-device product-device-2 shadow-sm d-none d-md-block"></div>
         </div>
 
-        
+{{-- <div class="container">
+    <div class="row">
+        <div class="col-lg-4 col-md-4 col-sm-6 p-2">
+            <div class="card shadow bg-white rounded">
+                <a href="#" class = "position-relative">
+                    <img src="https://placeimg.com/640/360/animals/sepia" class="card-img-top" alt="...">
+                    <div class="card-img-overlay text-center d-flex">
+                        <h2 class="w-100 align-self-center text-white mx-auto " style="text-shadow: 2px 2px 4px #000000;">Graphic Designer</h2>
+                    </div>            
+                </a>
+            </div>        
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-6 p-2">
+            <div class="card shadow bg-white rounded">
+                <a href="#" class = "position-relative">
+                    <img src="https://placeimg.com/640/360/animals" class="card-img-top" alt="...">
+                    <div class="card-img-overlay text-center d-flex">
+                        <h2 class="w-100 align-self-center text-white mx-auto " style="text-shadow: 2px 2px 4px #000000;">Video Editing</h2>
+                    </div>            
+                </a>
+            </div>        
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-6 p-2">
+            <div class="card shadow bg-white rounded">
+                <a href="#" class = "position-relative">
+                    <img src="https://placeimg.com/640/360/arch/grayscale" class="card-img-top" alt="...">
+                    <div class="card-img-overlay text-center d-flex">
+                        <h2 class="w-100 align-self-center text-white mx-auto " style="text-shadow: 2px 2px 4px #000000;">Social Media Advertising</h2>
+                    </div>            
+                </a>
+            </div>        
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-6 p-2">
+            <div class="card shadow bg-white rounded">
+                <a href="#" class = "position-relative">
+                    <img src="https://placeimg.com/640/360/arch/sepia" class="card-img-top" alt="...">
+                    <div class="card-img-overlay text-center d-flex">
+                        <h2 class="w-100 align-self-center text-white mx-auto " style="text-shadow: 2px 2px 4px #000000;">Website Development</h2>
+                    </div>            
+                </a>
+            </div>        
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-6 p-2">
+            <div class="card shadow bg-white rounded">
+                <a href="#" class = "position-relative">
+                    <img src="https://placeimg.com/640/360/nature/sepia" class="card-img-top" alt="...">
+                    <div class="card-img-overlay text-center d-flex">
+                        <h2 class="w-100 align-self-center text-white mx-auto " style="text-shadow: 2px 2px 4px #000000;">Copywriting</h2>
+                    </div>            
+                </a>
+            </div>        
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-6 p-2">
+            <div class="card shadow bg-white rounded">
+                <a href="#" class = "position-relative">
+                    <img src="https://placeimg.com/640/360/people/sepia" class="card-img-top" alt="...">
+                    <div class="card-img-overlay text-center d-flex">
+                        <h2 class="w-100 align-self-center text-white mx-auto " style="text-shadow: 2px 2px 4px #000000;">Translator</h2>
+                    </div>            
+                </a>
+            </div>        
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-6 p-2">
+            <div class="card shadow bg-white rounded">
+                <a href="#" class = "position-relative">
+                    <img src="https://placeimg.com/640/360/tech/sepia" class="card-img-top" alt="...">
+                    <div class="card-img-overlay text-center d-flex">
+                        <h2 class="w-100 align-self-center text-white mx-auto " style="text-shadow: 2px 2px 4px #000000;">2D/3D Animator</h2>
+                    </div>            
+                </a>
+            </div>        
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-6 p-2">
+            <div class="card shadow bg-white rounded">
+                <a href="#" class = "position-relative">
+                    <img src="https://placeimg.com/640/360/nature/grayscale" class="card-img-top" alt="...">
+                    <div class="card-img-overlay text-center d-flex">
+                        <h2 class="w-100 align-self-center text-white mx-auto " style="text-shadow: 2px 2px 4px #000000;">Storyboard Artist</h2>
+                    </div>            
+                </a>
+            </div>        
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-6 p-2">
+            <div class="card shadow bg-white rounded">
+                <a href="#" class = "position-relative">
+                    <img src="https://placeimg.com/640/360/people/grayscale" class="card-img-top" alt="...">
+                    <div class="card-img-overlay text-center d-flex">
+                        <h2 class="w-100 align-self-center text-white mx-auto " style="text-shadow: 2px 2px 4px #000000;">etc</h2>
+                    </div>            
+                </a>
+            </div>        
+        </div>
+    </div>
+</div>  --}}
+
+<hr>
+<style>
+/* .mycards > div > div.card {
+    height: calc(100% - 15px);
+    margin-bottom: 15px;
+} */
+</style>
+<div class="container  ">
+    <div class="row mycards">
+        <div class="col-lg-3 col-md-3 col-sm-6 p-2">
+            <div class="card shadow bg-white rounded">
+                <a href="#" class = "position-relative">
+                    <img src="https://placeimg.com/320/370/animals/sepia" class="card-img-top" alt="...">
+                    <div class="card-img-overlay text-center d-flex">
+                        <h2 class="w-100 align-self-center text-white mx-auto " style="text-shadow: 2px 2px 4px #000000;">Graphic Designer</h2>
+                    </div>            
+                </a>
+            </div>        
+        </div>
+        <div class="col-lg-3 col-md-3 col-sm-6 p-2">
+            <div class="card shadow bg-white rounded">
+                <a href="#" class = "position-relative">
+                    <img src="https://placeimg.com/320/370/nature" class="card-img-top" alt="...">
+                    <div class="card-img-overlay text-center d-flex">
+                        <h2 class="w-100 align-self-center text-white mx-auto " style="text-shadow: 2px 2px 4px #000000;">Video Editing</h2>
+                    </div>            
+                </a>
+            </div>        
+        </div>
+        <div class="col-lg-6 col-md-6 col-sm-6 p-2">
+            <div class="card shadow bg-white rounded">
+                <a href="#" class = "position-relative">
+                    <img src="https://placeimg.com/640/360/arch/grayscale" class="card-img-top" alt="...">
+                    <div class="card-img-overlay text-center d-flex">
+                        <h2 class="w-100 align-self-center text-white mx-auto " style="text-shadow: 2px 2px 4px #000000;">Social Media Advertising</h2>
+                    </div>            
+                </a>
+            </div>        
+        </div>
+        <div class="col-lg-6 col-md-6 col-sm-6 p-2">
+            <div class="card shadow bg-white rounded">
+                <a href="#" class = "position-relative">
+                    <img src="https://placeimg.com/640/360/arch/sepia" class="card-img-top" alt="...">
+                    <div class="card-img-overlay text-center d-flex">
+                        <h2 class="w-100 align-self-center text-white mx-auto " style="text-shadow: 2px 2px 4px #000000;">Website Development</h2>
+                    </div>            
+                </a>
+            </div>        
+        </div>
+        <div class="col-lg-3 col-md-3 col-sm-6 p-2">
+            <div class="card shadow bg-white rounded">
+                <a href="#" class = "position-relative">
+                    <img src="https://placeimg.com/320/370/nature/sepia" class="card-img-top" alt="...">
+                    <div class="card-img-overlay text-center d-flex">
+                        <h2 class="w-100 align-self-center text-white mx-auto " style="text-shadow: 2px 2px 4px #000000;">Copywriting</h2>
+                    </div>            
+                </a>
+            </div>        
+        </div>
+        <div class="col-lg-3 col-md-3 col-sm-6 p-2">
+            <div class="card shadow bg-white rounded">
+                <a href="#" class = "position-relative">
+                    <img src="https://placeimg.com/320/370/people/sepia" class="card-img-top" alt="...">
+                    <div class="card-img-overlay text-center d-flex">
+                        <h2 class="w-100 align-self-center text-white mx-auto " style="text-shadow: 2px 2px 4px #000000;">Translator</h2>
+                    </div>            
+                </a>
+            </div>        
+        </div>
+        <div class="col-lg-3 col-md-3 col-sm-6 p-2">
+            <div class="card shadow bg-white rounded">
+                <a href="#" class = "position-relative">
+                    <img src="https://placeimg.com/320/370/tech/sepia" class="card-img-top" alt="...">
+                    <div class="card-img-overlay text-center d-flex">
+                        <h2 class="w-100 align-self-center text-white mx-auto " style="text-shadow: 2px 2px 4px #000000;">2D/3D Animator</h2>
+                    </div>            
+                </a>
+            </div>        
+        </div>
+        <div class="col-lg-6 col-md-6 col-sm-6 p-2">
+            <div class="card shadow bg-white rounded">
+                <a href="#" class = "position-relative">
+                    <img src="https://placeimg.com/640/360/animals/grayscale" class="card-img-top" alt="...">
+                    <div class="card-img-overlay text-center d-flex">
+                        <h2 class="w-100 align-self-center text-white mx-auto " style="text-shadow: 2px 2px 4px #000000;">Storyboard Artist</h2>
+                    </div>            
+                </a>
+            </div>        
+        </div>
+        <div class="col-lg-3 col-md-3 col-sm-6 p-2">
+            <div class="card shadow bg-white rounded">
+                <a href="#" class = "position-relative">
+                    <img src="https://picsum.photos/320/370" class="card-img-top" alt="...">
+                    <div class="card-img-overlay text-center d-flex">
+                        <h2 class="w-100 align-self-center text-white mx-auto " style="text-shadow: 2px 2px 4px #000000;">etc</h2>
+                    </div>            
+                </a>
+            </div>        
+        </div>
+    </div>
+</div>   
+
+<hr>
 
 <div class="container">  
         <h1 class="title m-b-md">
@@ -82,7 +279,7 @@
                             <h3 class="mb-0">{{$post->title}}</h3>
                             <div class="mb-1 text-muted">Posted on : {{$post->created_at}}</div>
                             <p class="mb-2">{{$post->description}}</p>
-                            <small class="text-secondary mb-auto">{{$post->body}}</small>
+                            <small class="text-secondary mb-auto">{!!$post->body!!}</small>
                             <a href="/posts/{{$post->id}}" class="stretched-link">Continue reading</a>
                         </div>                        
                     </div>
