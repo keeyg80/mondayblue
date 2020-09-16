@@ -13,8 +13,7 @@
                             <div class="card-body">
                                 <h4 class="card-title"><?php echo e($post->title); ?></h4>
                                 <p class="card-text mb-auto"><?php echo e($post->description); ?></p>
-                                <small>posted on <?php echo e($post->created_at); ?></small>
-                                <small>posted by <?php echo e($post->createdby); ?></small>
+                                <small>posted on <?php echo e($post->created_at); ?> by <?php echo e($post->user->name); ?></small>
                             </div>
                             <div class="card-footer">
                                 <a class="btn btn-lg btn-block btn-outline-success" href="/posts/<?php echo e($post->id); ?>" >More</a>

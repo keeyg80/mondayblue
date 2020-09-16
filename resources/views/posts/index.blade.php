@@ -13,8 +13,7 @@
                             <div class="card-body">
                                 <h4 class="card-title">{{$post->title}}</h4>
                                 <p class="card-text mb-auto">{{$post->description}}</p>
-                                <small>posted on {{$post->created_at}}</small>
-                                <small>posted by {{$post->createdby}}</small>
+                                <small>posted on {{$post->created_at}} by {{$post->user->name}}</small>
                             </div>
                             <div class="card-footer">
                                 <a class="btn btn-lg btn-block btn-outline-success" href="/posts/{{$post->id}}" >More</a>

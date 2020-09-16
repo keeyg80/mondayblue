@@ -23,7 +23,7 @@ class CreatePostsTable extends Migration
             $table->string('puom');
             $table->integer('quantity');
             $table->string('quom');
-            $table->bigInteger('createdby');
+            $table->bigInteger('user_id');
             $table->timestamps();
         });
     }
