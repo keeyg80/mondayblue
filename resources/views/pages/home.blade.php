@@ -5,10 +5,32 @@
         
         
         <div class="jumbotron jumbotronbackground text-center">
-            <div class="col-md-5 p-lg-5 mx-auto my-5">
-            <h1 class="display-4 font-weight-normal">MondayBlue</h1>
-            <p class="lead font-weight-normal">Hiring professional and freelancer portal</p>
-            <a class="btn btn-outline-secondary" href="#">Coming soon</a>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6 p-lg-5 mx-auto my-5">
+                        <div class="card border-primary text-left">  
+                            <div class="card-header">Search Category</div>
+                            <div class="card-body">
+                                {!! Form::open(['action' => 'PostsController@index', 'method' => 'POST']) !!}
+                                    <div class="form-group">
+                                        {{Form::label('category','Category')}}
+                                        {{Form::text('category','', ['class' => 'form-control', 'placeholder' => 'Category'])}}
+                                    </div>
+                                    <div class="form-group">
+                                        {{Form::label('created_at','Posting Date')}}
+                                        {{Form::text('created_at','', ['class' => 'form-control', 'placeholder' => 'posting date'])}}
+                                    </div>
+                                    {{Form::submit('Search',['class' =>'btn btn-primary' ])}}
+                                {!! Form::close() !!}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 p-lg-5 mx-auto my-5">
+                        <h1 class="display-4 font-weight-normal">MondayBlue</h1>
+                        <p class="lead font-weight-normal">Hiring professional and freelancer portal</p>
+                        <a class="btn btn-outline-secondary" href="#">Coming soon</a>
+                    </div>
+                </div>
             </div>
             <div class="product-device shadow-sm d-none d-md-block"></div>
             <div class="product-device product-device-2 shadow-sm d-none d-md-block"></div>
