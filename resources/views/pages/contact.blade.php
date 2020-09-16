@@ -2,7 +2,7 @@
 
 @section('content')
     
-<div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center mt-5">
+<div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
   <h1 class="display-4">Contact Us</h1>
   <p class="lead">We are the best developer in town. More than thousand of applications established across Nilai, Malacca, Port Klang, Kuantan and Kuala Lumpur. </p>
 </div>
@@ -133,18 +133,22 @@
                         </div>
           </div>
 </div>
-          <div class="blog-post">
-                <h2 class="blog-post-title">Call Us </h2>
-                <p class="blog-post-meta">+6012 3020921 <a href="#">Kee</a></p>
+                <div class="container">
 
-                <p>Web Apllications, Android Apps and windows applications</p>
-                <ul>
-                  <li>34th Floor, UBN Tower</li>
-                  <li>10 Jalan P Ramlee</li>
-                  <li>50250 Kuala Lumpur</li>
-                </ul>
-                <p>Etiam porta <em>sem malesuada magna</em> mollis euismod. Cras mattis consectetur purus sit amet fermentum. Aenean lacinia bibendum nulla sed consectetur.</p>
-                <p>Donec ullamcorper nulla non metus auctor fringilla. Nulla vitae elit libero, a pharetra augue.</p>
-          </div><!-- /.blog-post -->
+                          
+                      <div class="blog-post">
+                          <h2 class="blog-post-title">Call Us </h2>
+                          <p class="blog-post-meta">+6012 3020921 <a href="#">Kee</a></p>
+
+                          <p>Web Apllications, Android Apps and windows applications</p>
+                          <ul>
+                            <li>34th Floor, UBN Tower</li>
+                            <li>10 Jalan P Ramlee</li>
+                            <li>50250 Kuala Lumpur</li>
+                          </ul>
+                          <p>Etiam porta <em>sem malesuada magna</em> mollis euismod. Cras mattis consectetur purus sit amet fermentum. Aenean lacinia bibendum nulla sed consectetur.</p>
+                          <p>Donec ullamcorper nulla non metus auctor fringilla. Nulla vitae elit libero, a pharetra augue.</p>
+                    </div><!-- /.blog-post -->
+                </div>
 
 @endsection

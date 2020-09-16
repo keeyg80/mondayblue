@@ -12,11 +12,15 @@
                 <h4>USD {{$post->price}}   / <small>{{$post->puom}}</small></h4>
                 <h4>Quantity : {{$post->quantity}} <small>{{$post->quom}}</small></h4>
                 @if (auth()->user()->id == $post->user_id)
-                    <a href="/posts/{{$post -> id}}/edit" class="btn btn-outline-primary"> Edit </a>
-                    {!!Form::open(['action' =>['PostsController@destroy', $post->id], 'method' =>'POST', 'class'=>'text-right'])!!}
-                        {{Form::hidden('_method','DELETE')}}
-                        {{Form::submit('Delete',['class'=>'btn btn-outline-danger'])}}
-                    {!!Form::close()!!}
+                    <div class="dflex">
+                        <div class="row float-right m-3">
+                            <a href="/posts/{{$post -> id}}/edit" class="btn btn-outline-primary mr-2"> Edit </a>
+                            {!!Form::open(['action' =>['PostsController@destroy', $post->id], 'method' =>'POST', 'class'=>'text-right'])!!}
+                                {{Form::hidden('_method','DELETE')}}
+                                {{Form::submit('Delete',['class'=>'btn btn-outline-danger'])}}
+                            {!!Form::close()!!}
+                        </div>                        
+                    </div>                    
                 @endif                
             </div>
             <div class="card-footer">

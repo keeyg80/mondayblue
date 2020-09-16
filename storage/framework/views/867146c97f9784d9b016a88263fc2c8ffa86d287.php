@@ -12,15 +12,19 @@
                 <h4>USD <?php echo e($post->price); ?>   / <small><?php echo e($post->puom); ?></small></h4>
                 <h4>Quantity : <?php echo e($post->quantity); ?> <small><?php echo e($post->quom); ?></small></h4>
                 <?php if(auth()->user()->id == $post->user_id): ?>
-                    <a href="/posts/<?php echo e($post -> id); ?>/edit" class="btn btn-outline-primary"> Edit </a>
-                    <?php echo Form::open(['action' =>['PostsController@destroy', $post->id], 'method' =>'POST', 'class'=>'text-right']); ?>
+                    <div class="dflex">
+                        <div class="row float-right m-3">
+                            <a href="/posts/<?php echo e($post -> id); ?>/edit" class="btn btn-outline-primary mr-2"> Edit </a>
+                            <?php echo Form::open(['action' =>['PostsController@destroy', $post->id], 'method' =>'POST', 'class'=>'text-right']); ?>
 
-                        <?php echo e(Form::hidden('_method','DELETE')); ?>
+                                <?php echo e(Form::hidden('_method','DELETE')); ?>
 
-                        <?php echo e(Form::submit('Delete',['class'=>'btn btn-outline-danger'])); ?>
+                                <?php echo e(Form::submit('Delete',['class'=>'btn btn-outline-danger'])); ?>
 
-                    <?php echo Form::close(); ?>
+                            <?php echo Form::close(); ?>
 
+                        </div>                        
+                    </div>                    
                 <?php endif; ?>                
             </div>
             <div class="card-footer">
