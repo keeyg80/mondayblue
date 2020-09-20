@@ -7,10 +7,14 @@
                 <h3>Edit Post</h3>
             </div>
             <div class="col-12">
-                {!! Form::open(['action' => ['PostsController@update', $post -> id], 'method' => 'POST']) !!}
-                    <div class="form-group">
+                {!! Form::open(['action' => ['PostsController@update', $post -> id], 'method' => 'POST', 'enctype' => 'multipart/form-data']) !!}
+                    {{-- <div class="form-group">
                         {{Form::label('category','Category')}}
                         {{Form::text('category',$post->category, ['class' => 'form-control', 'placeholder' => 'Category'])}}
+                    </div> --}}
+                    <div class="form-group">
+                        {{ Form::label('category', 'Category : ') }}
+                        {{ Form::select('category', $categories , $post->category ,['class' => 'form-control'])}}                        
                     </div>
                     <div class="form-group">
                         {{Form::label('title','Title')}}
@@ -39,6 +43,10 @@
                     <div class="form-group">
                         {{Form::label('quom','Quantity UOM')}}
                         {{Form::text('quom',$post->quom, ['class' => 'form-control', 'placeholder' => 'Person / Job / Project/ Vacancy'])}}
+                    </div>
+                    <div class="form-group">
+                        {{Form::label('cover_image','Cover Image : ')}}
+                        {{Form::file('cover_image')}}
                     </div>
                     {{Form::hidden('_method','PUT')}}
                     {{Form::submit('Submit',['class' =>'btn btn-primary'])}}

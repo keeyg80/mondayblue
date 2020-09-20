@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 16, 2020 at 11:12 AM
+-- Generation Time: Sep 20, 2020 at 03:04 PM
 -- Server version: 10.4.13-MariaDB
 -- PHP Version: 7.4.8
 
@@ -56,7 +56,9 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (1, '2014_10_12_000000_create_users_table', 1),
 (2, '2014_10_12_100000_create_password_resets_table', 1),
 (3, '2019_08_19_000000_create_failed_jobs_table', 1),
-(4, '2020_09_06_012437_create_posts_table', 2);
+(4, '2020_09_06_012437_create_posts_table', 2),
+(5, '2020_09_20_040550_add_cover_image_to_posts', 3),
+(6, '2020_09_20_045555_create_categories', 4);
 
 -- --------------------------------------------------------
 
@@ -88,28 +90,20 @@ CREATE TABLE `posts` (
   `quom` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `user_id` bigint(20) NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `cover_image` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `posts`
 --
 
-INSERT INTO `posts` (`id`, `category`, `title`, `description`, `body`, `price`, `puom`, `quantity`, `quom`, `user_id`, `created_at`, `updated_at`) VALUES
-(1, 'Web Development', 'Web Designer', 'we are hiring web designer for front end.', '<p>knowledge of html, css, jquery, PS, Ill, Adobe XD, Figma, (Node js, Angular framework will be bonus)</p>\r\n\r\n<p>min 2 years experience.</p>', 9550.00, 'Month', 3, 'Vacancies', 1, '2020-09-05 21:44:20', '2020-09-16 01:04:56'),
-(2, 'Web Development', 'Laravel Application Data controller', 'create controller,model and database migration job for 2 projects (Nov 20  - Jan 21) .', '<p>Laravel, php, MySqL. only needed for 3 months</p>', 5600.00, 'month', 5, 'vacancies', 1, '2020-09-06 00:25:48', '2020-09-16 01:05:12'),
-(3, 'Web Development', 'Web Application - Puchase Order Tracking System', 'Need a web system with administrator function total around 6 modules, estimate project development period 6 months .', '<p>Totally fresh development, can use any framework, MYSQL or MSSQL. Hosting and domain registered.</p>', 35500.00, 'project', 1, 'project', 1, '2020-09-06 00:36:15', '2020-09-16 01:05:26'),
-(4, 'etc', 'Windows Application - Packing System', 'Packing System with Master module and thermal barcode label printing on Honeywell  function total around 5 modules, estimate project development period 18 months .', '<p>Totally fresh development, production label printing, daily production, good transfer, dispatch. Users number around 10 to 30, may expand to 50 users. local database MS SQL Server provided.</p>', 50000.00, 'project', 1, 'project', 1, '2020-09-08 03:36:15', '2020-09-16 01:05:57'),
-(5, 'Web Development', 'Web Application - Packing Reporting System', 'Packing reporting and daily production tracking function total around 5 modules, estimate project development period 10 months .', '<p>Totally fresh development, production management users 10 to 20. linking with local production database MS SQL Server.</p>', 15000.00, 'project', 1, 'project', 1, '2020-09-08 09:44:15', '2020-09-16 01:09:55'),
-(6, 'Graphic Designer', 'Packaging Designer', 'I Need someone to handle my products packaging design.', '<p>Bottle lable, package sticker label. must know photoshop and illustrator. printer configuration. logo design and bonus if good in photograpghy.</p>', 3550.00, 'month', 1, 'person', 1, '2020-09-09 03:44:20', '2020-09-16 01:10:21'),
-(7, 'etc', 'System Developer', 'develop windows application', '<p>vb.net c# , ms sql, thermal printer knowledge. development period 6 to 9 months. 6 modules.</p>', 25000.00, 'job', 1, 'project', 1, '2020-09-09 04:25:48', '2020-09-16 01:09:22'),
-(8, 'etc', 'Delivery Guy', 'delivery job around Klang Valley', '<p>must have motorcycle and car licence. on call 24/7 working hour between 5AM to 8PM</p>', 3600.00, 'month', 5, 'vacancies', 1, '2020-09-08 06:38:48', '2020-09-16 01:08:56'),
-(9, 'Web Development', 'Web Application - Service and Invoicing System', 'Need a web system with administrator function total around 12 modules, estimate project development period 9 to 12 months .', '<p>Totally fresh development, can use any framework, MYSQL or MSSQL. Hosting and domain registered.</p>', 45500.55, 'project', 1, 'project', 1, '2020-09-09 05:36:15', '2020-09-16 01:08:18'),
-(10, 'Graphic Designer', 'Leaflet Designer', 'we are hiring leaflet designer for cosmetic product.', '<p>photoshop , illustrator, lightroom,</p>', 3500.00, 'month', 1, 'person', 1, '2020-09-07 01:10:20', '2020-09-16 01:07:06'),
-(11, 'etc', 'E Documentation clerk', 'scan paper documents', '<p>ms office knowledge, know how to use printer and scanner.</p>', 1200.65, 'Month', 3, 'vacancies', 1, '2020-09-12 01:03:53', '2020-09-16 01:06:30'),
-(12, 'etc', '1 day body guard', 'I need a body guard on my birthday 21st Sep 2020.', '<p>Here&#39;s my <em><ins><strong>minimum requirements</strong></ins></em>. Female or Male are welcome to request.</p>\r\n\r\n<table border=\"1\" cellpadding=\"1\" cellspacing=\"1\" style=\"width:500px\">\r\n	<tbody>\r\n		<tr>\r\n			<td><em><strong>Attribute</strong></em></td>\r\n			<td><em><strong>Value</strong></em></td>\r\n		</tr>\r\n		<tr>\r\n			<td>Height</td>\r\n			<td>155cm(female) 170cm(Male),&nbsp;</td>\r\n		</tr>\r\n		<tr>\r\n			<td>shape</td>\r\n			<td>muscular(male), fit(female)</td>\r\n		</tr>\r\n		<tr>\r\n			<td>Skill</td>\r\n			<td>Martial Art</td>\r\n		</tr>\r\n	</tbody>\r\n</table>\r\n\r\n<p>- 10 hours closed protection on vip</p>', 250.55, 'Day', 1, 'Person', 2, '2020-09-12 06:21:46', '2020-09-16 00:57:17'),
-(14, 'etc', 'Marketing Planner', 'I need someone to market my development software', '<p>I have 3 Applications to sell.</p>', 3000.95, 'Job', 1, 'Job', 1, '2020-09-13 02:19:49', '2020-09-16 01:06:15'),
-(16, 'Graphic Designer', 'Advertisement board graphic designer', 'I need someone take care of designing job for HQ Outlet and branches advertisement board.', '<p>All Banners, promotion leaflet. monthly advertisement.</p>', 3500.89, 'Month', 1, 'Person', 2, '2020-09-16 00:14:39', '2020-09-16 01:11:25');
+INSERT INTO `posts` (`id`, `category`, `title`, `description`, `body`, `price`, `puom`, `quantity`, `quom`, `user_id`, `created_at`, `updated_at`, `cover_image`) VALUES
+(18, 'Graphic Designer', 'Product Advertisement Designer', 'Full time designer for our products including advertisement banner, leaflet and product labels.', '<p>Photodhop Illustrator and Lightroom</p>', 3500.89, 'Month', 1, 'Vacancy', 1, '2020-09-19 22:54:29', '2020-09-20 00:40:23', 'pexels-anthony-shkraba-4348401_1600591223.jpg'),
+(19, 'Graphic Designer', 'Banner Designer', 'Product Advertisement Banner Designer', '<p>Monthly Promotion Banner and leaflet design</p>', 3580.50, 'Month', 1, 'Vacancy', 1, '2020-09-19 23:00:01', '2020-09-19 23:00:01', 'noimage.jpg'),
+(20, 'Translator', 'E Documentation clerk', 'scan paper documents', '<p>scan company documents</p>', 2200.65, 'Month', 2, 'vacancies', 1, '2020-09-19 23:11:38', '2020-09-20 00:40:43', 'pexels-andrea-piacquadio-3831873_1600591243.jpg'),
+(21, 'Website Development', 'Story Editor', 'Need someone to edit my story', '<p>All in English</p>', 2000.00, 'Job', 1, 'Job', 1, '2020-09-19 23:18:39', '2020-09-20 00:46:08', 'pexels-cottonbro-4708905_1600591568.jpg'),
+(22, 'Social Media Advertising', 'I need someone to advertise my product in social media', 'All stationary and printers supplies', '<p>I need to have 200 orders on first month and atleast 7000 orders on fifth months onward.</p>', 15000.00, 'project', 2, 'vacancies', 1, '2020-09-20 00:37:58', '2020-09-20 00:43:19', 'pexels-anthony-shkraba-4348401_1600591399.jpg');
 
 -- --------------------------------------------------------
 
@@ -185,13 +179,13 @@ ALTER TABLE `failed_jobs`
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `posts`
 --
 ALTER TABLE `posts`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
 -- AUTO_INCREMENT for table `users`

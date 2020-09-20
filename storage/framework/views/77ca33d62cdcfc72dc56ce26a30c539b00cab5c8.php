@@ -7,13 +7,13 @@
                 <h3>Edit Post</h3>
             </div>
             <div class="col-12">
-                <?php echo Form::open(['action' => ['PostsController@update', $post -> id], 'method' => 'POST']); ?>
+                <?php echo Form::open(['action' => ['PostsController@update', $post -> id], 'method' => 'POST', 'enctype' => 'multipart/form-data']); ?>
 
+                    
                     <div class="form-group">
-                        <?php echo e(Form::label('category','Category')); ?>
+                        <?php echo e(Form::label('category', 'Category : ')); ?>
 
-                        <?php echo e(Form::text('category',$post->category, ['class' => 'form-control', 'placeholder' => 'Category'])); ?>
-
+                        <?php echo e(Form::select('category', $categories , $post->category ,['class' => 'form-control'])); ?>                        
                     </div>
                     <div class="form-group">
                         <?php echo e(Form::label('title','Title')); ?>
@@ -55,6 +55,12 @@
                         <?php echo e(Form::label('quom','Quantity UOM')); ?>
 
                         <?php echo e(Form::text('quom',$post->quom, ['class' => 'form-control', 'placeholder' => 'Person / Job / Project/ Vacancy'])); ?>
+
+                    </div>
+                    <div class="form-group">
+                        <?php echo e(Form::label('cover_image','Cover Image : ')); ?>
+
+                        <?php echo e(Form::file('cover_image')); ?>
 
                     </div>
                     <?php echo e(Form::hidden('_method','PUT')); ?>
