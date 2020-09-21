@@ -13,8 +13,8 @@
                             <div class="card-body">
                                 {!! Form::open(['action' => 'PostsController@index', 'method' => 'POST']) !!}
                                     <div class="form-group">
-                                        {{Form::label('category','Category')}}
-                                        {{Form::text('category','', ['class' => 'form-control', 'placeholder' => 'Category'])}}
+                                        {{ Form::label('category', 'Category : ') }}
+                                        {{ Form::select('category', [null=>'Please Select'] + $categories ,'',['class' => 'form-control'])}}
                                     </div>
                                     <div class="form-group">
                                         {{Form::label('created_at','Posting Date')}}
