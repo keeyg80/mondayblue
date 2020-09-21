@@ -1,5 +1,5 @@
 
-    <div class="row align-content-center m-3"> 
+    <div class="row align-content-center"> 
         @if(count($errors) > 0)
             @foreach ($errors -> all() as $error)
                 <div class="col-12 alert alert-danger alert-dismissible">

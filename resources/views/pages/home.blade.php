@@ -4,7 +4,7 @@
  
         
         
-        <div class="jumbotron jumbotronbackground text-center">
+        <div class="jumbotron jumbotronbackground">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-6 p-lg-5 mx-auto my-5">

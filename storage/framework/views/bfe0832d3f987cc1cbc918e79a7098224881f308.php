@@ -14,9 +14,9 @@
                                 <?php echo Form::open(['action' => 'PostsController@index', 'method' => 'POST']); ?>
 
                                     <div class="form-group">
-                                        <?php echo e(Form::label('category','Category')); ?>
+                                        <?php echo e(Form::label('category', 'Category : ')); ?>
 
-                                        <?php echo e(Form::text('category','', ['class' => 'form-control', 'placeholder' => 'Category'])); ?>
+                                        <?php echo e(Form::select('category', [null=>'Please Select'] + $categories ,'',['class' => 'form-control'])); ?>
 
                                     </div>
                                     <div class="form-group">
