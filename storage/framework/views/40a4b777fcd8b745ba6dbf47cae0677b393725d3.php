@@ -2,75 +2,92 @@
 
 <?php $__env->startSection('content'); ?>
     <div class="container">
-        <div class="row">
-            <div class="text-left m-3">
-                <h3>Create Post</h3>
-            </div>
-            <div class="col-12">
-                <?php echo Form::open(['action' => 'PostsController@store', 'method' => 'POST', 'enctype' => 'multipart/form-data']); ?>
+        <div class="card border border-dark">
+            <div class="card-header">
+                    <h3>Create Post</h3>
+            </div>            
+            
+            <?php echo Form::open(['action' => 'PostsController@store', 'method' => 'POST', 'enctype' => 'multipart/form-data']); ?>
 
-                    
-                    
-                    <div class="form-group">
-                        <?php echo e(Form::label('category', 'Category : ')); ?>
+                <div class="card-body row">    
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-xm-12">    
+                        <div class="form-group">
+                                <?php echo e(Form::label('category', 'Category : ')); ?>
 
-                        <?php echo e(Form::select('category', [null=>'Please Select'] + $categories ,'',['class' => 'form-control'])); ?>
+                                <?php echo e(Form::select('category', [null=>'Please Select'] + $categories ,'',['class' => 'form-control'])); ?>
 
-                        
+                            </div>
                     </div>
-                    <div class="form-group">
-                        <?php echo e(Form::label('title','Title : ')); ?>
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-xm-12">
+                        <div class="form-group">
+                            <?php echo e(Form::label('title','Title : ')); ?>
 
-                        <?php echo e(Form::text('title','', ['class' => 'form-control', 'placeholder' => 'Title'])); ?>
+                            <?php echo e(Form::text('title','', ['class' => 'form-control', 'placeholder' => 'Title'])); ?>
 
+                        </div>
                     </div>
-                    <div class="form-group">
-                        <?php echo e(Form::label('description','Description : ')); ?>
+                    <div class="col-12">
+                        <div class="form-group">
+                            <?php echo e(Form::label('description','Description : ')); ?>
 
-                        <?php echo e(Form::text('description','', ['class' => 'form-control', 'placeholder' => 'Description'])); ?>
+                            <?php echo e(Form::text('description','', ['class' => 'form-control', 'placeholder' => 'Description'])); ?>
 
+                        </div>
                     </div>
-                    <div class="form-group">
-                        <?php echo e(Form::label('body','Body : ')); ?>
+                    <div class="col-12">
+                        <div class="form-group">
+                            <?php echo e(Form::label('body','Body : ')); ?>
 
-                        <?php echo e(Form::textarea('body','', ['id' => 'article-ckeditor', 'class' => 'form-control', 'placeholder' => 'Body text'])); ?>
+                            <?php echo e(Form::textarea('body','', ['id' => 'article-ckeditor', 'class' => 'form-control', 'placeholder' => 'Body text'])); ?>
 
+                        </div>
                     </div>
-                    <div class="form-group">
-                        <?php echo e(Form::label('price','Price USD : ')); ?>
+                    <div class="col-lg-3 col-md-3 col-sm-6 col-xm-12">
+                        <div class="form-group">
+                            <?php echo e(Form::label('price','Price USD : ')); ?>
 
-                        <?php echo e(Form::text('price','', ['class' => 'form-control', 'placeholder' => 'Price USD'])); ?>
+                            <?php echo e(Form::text('price','', ['class' => 'form-control', 'placeholder' => 'Price USD'])); ?>
 
+                        </div>
                     </div>
-                    <div class="form-group">
-                        <?php echo e(Form::label('puom','Price UOM : ')); ?>
+                    <div class="col-lg-3 col-md-3 col-sm-6 col-xm-12">
+                        <div class="form-group">
+                            <?php echo e(Form::label('puom','Price UOM : ')); ?>
 
-                        <?php echo e(Form::text('puom','', ['class' => 'form-control', 'placeholder' => 'Job / Project / Month / Day'])); ?>
+                            <?php echo e(Form::text('puom','', ['class' => 'form-control', 'placeholder' => 'Job / Project / Month / Day'])); ?>
 
+                        </div>
                     </div>
-                    <div class="form-group">
-                        <?php echo e(Form::label('quantity','Quantity : ')); ?>
+                    <div class="col-lg-3 col-md-3 col-sm-6 col-xm-12">
+                        <div class="form-group">
+                            <?php echo e(Form::label('quantity','Quantity : ')); ?>
 
-                        <?php echo e(Form::text('quantity','', ['class' => 'form-control', 'placeholder' => 'number of person / job / project'])); ?>
+                            <?php echo e(Form::text('quantity','', ['class' => 'form-control', 'placeholder' => 'number of person / job / project'])); ?>
 
+                        </div>
                     </div>
-                    <div class="form-group">
-                        <?php echo e(Form::label('quom','Quantity UOM : ')); ?>
+                    <div class="col-lg-3 col-md-3 col-sm-6 col-xm-12">
+                        <div class="form-group">
+                            <?php echo e(Form::label('quom','Quantity UOM : ')); ?>
 
-                        <?php echo e(Form::text('quom','', ['class' => 'form-control', 'placeholder' => 'Person / Job / Project/ Vacancy'])); ?>
+                            <?php echo e(Form::text('quom','', ['class' => 'form-control', 'placeholder' => 'Person / Job / Project/ Vacancy'])); ?>
 
+                        </div>
                     </div>
-                    <div class="form-group">
-                        <?php echo e(Form::label('cover_image','Cover Image : ')); ?>
+                    <div class="col-12">
+                        <div class="form-group">
+                            <?php echo e(Form::label('cover_image','Cover Image : ')); ?>
 
-                        <?php echo e(Form::file('cover_image')); ?>
+                            <?php echo e(Form::file('cover_image')); ?>
 
+                        </div>
                     </div>
                         <?php echo e(Form::submit('Submit',['class' =>'btn btn-primary' ])); ?>
 
-                <?php echo Form::close(); ?>
+                </div> 
+            <?php echo Form::close(); ?>
 
-            </div>            
+                       
         </div>
     </div>  
 

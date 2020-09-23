@@ -1,5 +1,5 @@
 
-    <div class="row align-content-center m-3"> 
+    <div class="row align-content-center"> 
         <?php if(count($errors) > 0): ?>
             <?php $__currentLoopData = $errors -> all(); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $error): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                 <div class="col-12 alert alert-danger alert-dismissible">
