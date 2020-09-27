@@ -58,7 +58,7 @@
         </div>
         <div class="row mt-5">
             <div class="col-12">
-                <h3>Company Deparment</h3>
+                <h3>Company Department</h3>
                 <p>Contact our team</p>
             </div>
             <div class="col-lg-3 col-md-6">
