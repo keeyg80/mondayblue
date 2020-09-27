@@ -10,12 +10,10 @@
                         <div class="col-lg-3 col-xs-12 links">
                         <h4 class="mt-lg-0 mt-sm-3">Links</h4>
                                 <ul class="m-0 p-0 text-left">
-                                <li><a href="mondayblue/public/">Home</a></li>
-                                <li><a href="mondayblue/public/about">About Us</a></li>
-                                <li><a href="mondayblue/public/contact">Contact Us</a></li>
-                                <li><a href="#">Fusce scelerisque</a></li>
-                                <li><a href="#">Sed faucibus</a></li>
-                                <li><a href="#">Mauris efficitur nulla</a></li>
+                                <li><a href="/">Home</a></li>
+                                <li><a href="/posts">Posts</a></li>
+                                <li><a href="/about">About Us</a></li>
+                                <li><a href="/contact">Contact Us</a></li>
                                 </ul>
                         </div>
                         <div class="col-lg-4 col-xs-12 location">

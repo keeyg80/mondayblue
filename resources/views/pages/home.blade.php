@@ -25,7 +25,7 @@
     <div class="jumbotron jumbotronbackground">
         <div class="container">
             <div class="row">
-                <div class="col-lg-6 p-lg-5 mx-auto my-5">
+                {{-- <div class="col-lg-6 p-lg-5 mx-auto my-5">
                     <div class="card border-primary text-left">
                         <div class="card-header">Search Category</div>
                         <div class="card-body">
@@ -42,7 +42,7 @@
                             {!! Form::close() !!}
                         </div>
                     </div>
-                </div>
+                </div> --}}
                 <div class="col-lg-6 p-lg-5 mx-auto my-5">
                     <h1 class="display-4 font-weight-normal">MondayBlue</h1>
                     <p class="lead font-weight-normal">Hiring professional and freelancer portal</p>

@@ -25,31 +25,7 @@
     <div class="jumbotron jumbotronbackground">
         <div class="container">
             <div class="row">
-                <div class="col-lg-6 p-lg-5 mx-auto my-5">
-                    <div class="card border-primary text-left">
-                        <div class="card-header">Search Category</div>
-                        <div class="card-body">
-                            <?php echo Form::open(['action' => 'PostsController@index', 'method' => 'POST']); ?>
-
-                            <div class="form-group">
-                                <?php echo e(Form::label('category', 'Category : ')); ?>
-
-                                <?php echo e(Form::select('category', [null => 'Please Select'] + $categories, '', ['class' => 'form-control'])); ?>
-
-                            </div>
-                            <div class="form-group">
-                                <?php echo e(Form::label('created_at', 'Posting Date')); ?>
-
-                                <?php echo e(Form::text('created_at', '', ['class' => 'form-control', 'placeholder' => 'posting date'])); ?>
-
-                            </div>
-                            <?php echo e(Form::submit('Search', ['class' => 'btn btn-primary'])); ?>
-
-                            <?php echo Form::close(); ?>
-
-                        </div>
-                    </div>
-                </div>
+                
                 <div class="col-lg-6 p-lg-5 mx-auto my-5">
                     <h1 class="display-4 font-weight-normal">MondayBlue</h1>
                     <p class="lead font-weight-normal">Hiring professional and freelancer portal</p>
