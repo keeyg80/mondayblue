@@ -32,7 +32,7 @@ class PostsController extends Controller
        /*  $posts = Post::where('category', Input::get('categoryselect'))
     ->orWhere('body', 'like', '%' . Input::get('bodysearch') . '%')->get(); */
         
-        $posts = Post::orderby('created_at','desc')->paginate(3);    
+        $posts = Post::orderby('created_at','desc')->paginate(9);    
         //$posts = Post::where('category','freelancer')->get();
         //$posts = Post::orderby('created_at','desc')->take(3)->get();
         //$posts = Post::orderby('created_at','desc')->get();

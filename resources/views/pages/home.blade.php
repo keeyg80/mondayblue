@@ -157,8 +157,6 @@
             </div>
         </div>
     </div> --}}
-
-    <hr>
     <style>
         /* .mycards > div > div.card {
                         height: calc(100% - 15px);
@@ -268,14 +266,10 @@
                 </div>
             </div>
         </div>
-    </div>
-
-    <hr>
-
-    <div class="container">
-        <h1 class="title m-b-md">
-            Our Posts
-        </h1>
+    </div>   
+    <div class="container mt-5">
+        <h2 style="font-size: 28px; line-height: 40px;">Our Posts</h2>
+        <p style="font-size: 18px; line-height: 30px;" class="sub-heading"></p>        
         <div class="row mb-2">
             @if (count($posts) >= 1)
                 @foreach ($posts as $post)
@@ -293,8 +287,8 @@
                                         class="text-muted">{{ $post->puom }}</small></li>
                                 <li class="list-group-item">{{ $post->quantity }} <small>{{ $post->quom }}</small></li>
                             </ul>
-                            <div class="card-body">
-                                <a href="/posts/{{ $post->id }}" class="btn btn-primary"> Read More </a>
+                            <div class="card-footer bg-transparent">
+                                <a href="/posts/{{ $post->id }}" class="btn btn-lg btn-block btn-primary"> Read More </a>
                             </div>
                         </div>
                     </div>
@@ -348,7 +342,7 @@
         </div>
     </div>
 
-    <div class="container">
+    {{-- <div class="container">
         <h3 class="title m-b-md">
             Uploaded Posts
             </h1>
@@ -373,7 +367,7 @@
                     <p>No posts found</p>
                 @endif
             </div>
-    </div>
+    </div> --}}
 
 
 
