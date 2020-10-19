@@ -403,13 +403,17 @@
                 @if (count($posts) > 0)
                     @foreach ($posts as $post)
                     <div class="carousel-item">
-                        <img class="service-image" src="/storage/cover_images/{{ $post->cover_image }}" alt="...">
-                        <div class="carousel-caption ">
-                            <h5 class="text-dark">{{ $post->category }} : {{ $post->title }}</h5>
-                            {{-- <h6>{{ $post->description }}</h6>
-                            <p><small class="text-secondary ">{!! $post->body !!}</small></p> --}}
-                            <p><small class="text-dark ">{!! $post->price !!} / {!! $post->puom !!}    {!! $post->quantity !!}  {!! $post->quom !!}</small></p>
-                            <p><small class="text-dark">{{ $post->created_at }} by {{ $post->user->name }}</small></p>
+                        <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm position-relative">
+                            <div class="col p-4 d-flex flex-column position-static">
+                              <strong class="d-inline-block mb-2 text-primary">{{ $post->category }} </strong>
+                              <h3 class="mb-0">{{ $post->title }}</h3>
+                              <div class="mb-1 text-muted">{{ $post->created_at }} by {{ $post->user->name }}</div>
+                              <p class="card-text mb-auto">{!! $post->price !!} / {!! $post->puom !!} </p>
+                              <a href="#" class="stretched-link"> {!! $post->quantity !!}  {!! $post->quom !!}</a>
+                            </div>
+                            <div class="col-auto d-none d-lg-block">
+                                <img class="service-image" src="/storage/cover_images/{{ $post->cover_image }}" alt="...">
+                            </div>
                         </div>
                     </div>
                     @endforeach
