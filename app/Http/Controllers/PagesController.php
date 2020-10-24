@@ -8,9 +8,9 @@ use App\Category;
 class PagesController extends Controller
 {
     public function home(){
-        $posts = Post::all();
-        $categories = Category::get()->pluck('name', 'name')->toArray();
-        return view('pages.home')->with('posts',$posts)->with('categories',$categories);
+        // $posts = Post::all();
+        $posts = Post::orderby('created_at','desc')->get();
+        return view('pages.home')->with('posts',$posts);
     }
 
 

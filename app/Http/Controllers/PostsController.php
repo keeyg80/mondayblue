@@ -31,7 +31,7 @@ class PostsController extends Controller
 
        /*  $posts = Post::where('category', Input::get('categoryselect'))
     ->orWhere('body', 'like', '%' . Input::get('bodysearch') . '%')->get(); */
-        
+       
         $posts = Post::orderby('created_at','desc')->paginate(9);    
         //$posts = Post::where('category','freelancer')->get();
         //$posts = Post::orderby('created_at','desc')->take(3)->get();
@@ -48,7 +48,7 @@ class PostsController extends Controller
     public function create()
     {
         //$categories = Category::all(['id', 'name']);
-        $categories = Category::get()->pluck('name', 'name')->toArray();
+        $categories = Category::get()->pluck('name', 'id')->toArray();
         return view('posts.create')->with('categories',$categories);
         //$categories = Category::all(['id', 'name']);
         //return view('posts.create', compact('id', 'name'));
@@ -69,9 +69,9 @@ class PostsController extends Controller
             'description' => 'required',
             'body' => 'required',
             'price' => 'required',
-            'puom' => 'required',
-            'quantity' => 'required',
-            'quom' => 'required',
+            'priceunit' => 'required',
+            'delivery' => 'required',
+            'deliveryunit' => 'required',
             'cover_image' => 'image|nullable|max:1999'
         ]); 
         
@@ -94,14 +94,14 @@ class PostsController extends Controller
 
         //create post
         $post = new Post;
-        $post->category = $request->input('category');
+        $post->category_id = $request->input('category');
         $post->title = $request->input('title');
         $post->description = $request->input('description');
         $post->body = $request->input('body');
         $post->price = $request->input('price');
-        $post->puom = $request->input('puom');
-        $post->quantity = $request->input('quantity');
-        $post->quom = $request->input('quom');
+        $post->priceunit = $request->input('priceunit');
+        $post->delivery = $request->input('delivery');
+        $post->deliveryunit = $request->input('deliveryunit');
         $post->user_id = auth()->user()->id;
         $post->cover_image = $fileNameToStore;
         $post ->save();
@@ -117,9 +117,9 @@ class PostsController extends Controller
      */
     public function show($id)
     {
-                
+        $categories = Category::get()->pluck('name', 'id')->toArray();      
         $post = Post::find($id);
-        return view('posts.show')->with('post',$post);
+        return view('posts.show')->with('post',$post)->with('categories',$categories);
     }
 
     /**
@@ -131,7 +131,7 @@ class PostsController extends Controller
     public function edit($id)
     {
         $post = Post::find($id);
-        $categories = Category::get()->pluck('name', 'name')->toArray();
+        $categories = Category::get()->pluck('name', 'id')->toArray();
         //return view('posts.create')->with('categories',$categories);
         //check authorize post user
         if (auth()->user()->id !== $post->user_id){
@@ -156,9 +156,9 @@ class PostsController extends Controller
             'description' => 'required',
             'body' => 'required',
             'price' => 'required',
-            'puom' => 'required',
-            'quantity' => 'required',
-            'quom' => 'required',
+            'priceunit' => 'required',
+            'delivery' => 'required',
+            'deliveryunit' => 'required',
             'cover_image' => 'image|nullable|max:1999'
         ]); 
         
@@ -184,14 +184,14 @@ class PostsController extends Controller
         
         //update post
         $post = Post::find($id);
-        $post->category = $request->input('category');
+        $post->category_id = $request->input('category');
         $post->title = $request->input('title');
         $post->description = $request->input('description');
         $post->body = $request->input('body');
         $post->price = $request->input('price');
-        $post->puom = $request->input('puom');
-        $post->quantity = $request->input('quantity');
-        $post->quom = $request->input('quom');
+        $post->priceunit = $request->input('priceunit');
+        $post->delivery = $request->input('delivery');
+        $post->deliveryunit = $request->input('deliveryunit');
         $post->user_id = auth()->user()->id;
         if($request->hasFile('cover_image')){
             if($post->cover_image != 'noimage.jpg'){

@@ -30,7 +30,7 @@
                                 <p class="lead mb-0"><a href="#" class="text-white font-weight-bold">Continue reading...</a></p>
                                 </div>
                             </div> -->
-    <div id="carouselExampleIndicators" class="mt-5 carousel slide" data-ride="carousel">
+    {{-- <div id="carouselExampleIndicators" class="mt-5 carousel slide" data-ride="carousel">
         <ol class="carousel-indicators">
             <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
             <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
@@ -96,7 +96,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> --}}
 
     <div class="container">
         <div class="row">

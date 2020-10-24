@@ -15,14 +15,14 @@ class CreatePostsTable extends Migration
     {
         Schema::create('posts', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('category');
+            $table->string('category_id');
             $table->string('title');
             $table->mediumText('description');
             $table->longText('body');
             $table->float('price',9,2);
-            $table->string('puom');
-            $table->integer('quantity');
-            $table->string('quom');
+            $table->string('priceunit');
+            $table->integer('delivery');
+            $table->string('deliveryunit');
             $table->bigInteger('user_id');
             $table->timestamps();
         });

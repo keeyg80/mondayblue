@@ -172,7 +172,7 @@
         <div class="row mycards">
             <div class="col-lg-6 col-md-6 col-sm-6 p-2">
                 <div class="card shadow bg-white rounded">
-                    <a href="#" class="position-relative">
+                    <a href="/category/2" class="position-relative">
                         <img src="../img/c1.jpg" class="card-img-top service-image" alt="...">
                         <div class="card-img-overlay text-center d-flex">
                             <h2 class="w-100 align-self-center text-white mx-auto "
@@ -183,7 +183,7 @@
             </div>
             <div class="col-lg-3 col-md-3 col-sm-6 p-2">
                 <div class="card shadow bg-white rounded">
-                    <a href="#" class="position-relative">
+                    <a href="/category/3" class="position-relative">
                         <img src="../img/c2.jpg" class="card-img-top service-image" alt="...">
                         <div class="card-img-overlay text-center d-flex">
                             <h2 class="w-100 align-self-center text-white mx-auto "
@@ -194,7 +194,7 @@
             </div>
             <div class="col-lg-3 col-md-3 col-sm-6 p-2">
                 <div class="card shadow bg-white rounded">
-                    <a href="#" class="position-relative">
+                    <a href="/category/4" class="position-relative">
                         <img src="../img/c3.jpg" class="card-img-top service-image" alt="...">
                         <div class="card-img-overlay text-center d-flex">
                             <h2 class="w-100 align-self-center text-white mx-auto "
@@ -205,7 +205,7 @@
             </div>
             <div class="col-lg-3 col-md-3 col-sm-6 p-2">
                 <div class="card shadow bg-white rounded">
-                    <a href="#" class="position-relative">
+                    <a href="/category/5" class="position-relative">
                         <img src="../img/c4.jpg" class="card-img-top service-image" alt="...">
                         <div class="card-img-overlay text-center d-flex">
                             <h2 class="w-100 align-self-center text-white mx-auto "
@@ -216,7 +216,7 @@
             </div>
             <div class="col-lg-3 col-md-3 col-sm-6 p-2">
                 <div class="card shadow bg-white rounded">
-                    <a href="#" class="position-relative">
+                    <a href="/category/6" class="position-relative">
                         <img src="../img/c5.jpg" class="card-img-top service-image" alt="...">
                         <div class="card-img-overlay text-center d-flex">
                             <h2 class="w-100 align-self-center text-white mx-auto "
@@ -227,7 +227,7 @@
             </div>
             <div class="col-lg-6 col-md-6 col-sm-6 p-2">
                 <div class="card shadow bg-white rounded">
-                    <a href="#" class="position-relative">
+                    <a href="/category/7" class="position-relative">
                         <img src="../img/c6.jpg" class="card-img-top service-image" alt="...">
                         <div class="card-img-overlay text-center d-flex">
                             <h2 class="w-100 align-self-center text-white mx-auto "
@@ -238,7 +238,7 @@
             </div>
             <div class="col-lg-3 col-md-3 col-sm-6 p-2">
                 <div class="card shadow bg-white rounded">
-                    <a href="#" class="position-relative">
+                    <a href="/category/8" class="position-relative">
                         <img src="../img/c7.jpg" class="card-img-top service-image" alt="...">
                         <div class="card-img-overlay text-center d-flex">
                             <h2 class="w-100 align-self-center text-white mx-auto "
@@ -249,7 +249,7 @@
             </div>
             <div class="col-lg-3 col-md-3 col-sm-6 p-2">
                 <div class="card shadow bg-white rounded">
-                    <a href="#" class="position-relative">
+                    <a href="/category/9" class="position-relative">
                         <img src="../img/c8.jpg" class="card-img-top service-image" alt="...">
                         <div class="card-img-overlay text-center d-flex">
                             <h2 class="w-100 align-self-center text-white mx-auto "
@@ -260,7 +260,7 @@
             </div>
             <div class="col-lg-3 col-md-3 col-sm-6 p-2">
                 <div class="card shadow bg-white rounded">
-                    <a href="#" class="position-relative">
+                    <a href="/category/10" class="position-relative">
                         <img src="../img/c9.jpg" class="card-img-top service-image" alt="...">
                         <div class="card-img-overlay text-center d-flex">
                             <h2 class="w-100 align-self-center text-white mx-auto "
@@ -271,7 +271,7 @@
             </div>
             <div class="col-lg-3 col-md-3 col-sm-6 p-2">
                 <div class="card shadow bg-white rounded">
-                    <a href="#" class="position-relative">
+                    <a href="/category/11" class="position-relative">
                         <img src="../img/c10.jpg" class="card-img-top service-image" alt="...">
                         <div class="card-img-overlay text-center d-flex">
                             <h2 class="w-100 align-self-center text-white mx-auto "
@@ -403,17 +403,18 @@
                 @if (count($posts) > 0)
                     @foreach ($posts as $post)
                     <div class="carousel-item">
-                        <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm position-relative">
-                            <div class="col p-4 d-flex flex-column position-static">
-                              <strong class="d-inline-block mb-2 text-primary">{{ $post->category }} </strong>
-                              <h3 class="mb-0">{{ $post->title }}</h3>
-                              <div class="mb-1 text-muted">{{ $post->created_at }} by {{ $post->user->name }}</div>
-                              <p class="card-text mb-auto">{!! $post->price !!} / {!! $post->puom !!} </p>
-                              <a href="#" class="stretched-link"> {!! $post->quantity !!}  {!! $post->quom !!}</a>
+                        <div class="row no-gutters rounded overflow-hidden flex-md-row mb-4 shadow-sm position-relative">                            
+                            <div class="col p-4 d-flex flex-column position-static text-center" >
+                                <strong class="h1 d-inline-block mb-2 text-primary">{{ $post->category->name }} </strong>
+                                <h2 class="mb-0">{{ $post->title }}</h2>
+                                <h3 class="mb-0">{{ $post->description }}</h3>
+                                <div class="mb-1 text-muted">{{ $post->created_at }} by {{ $post->user->name }}</div>
+                                <p class="h1 card-text mb-auto">USD {!! $post->price !!} / {!! $post->priceunit !!} </p>
+                                <a href="/posts/{{ $post->id }}" class="stretched-link"> Delivery : {!! $post->delivery !!}  {!! $post->deliveryunit !!}</a>
                             </div>
                             <div class="col-auto d-none d-lg-block">
                                 <img class="service-image" src="/storage/cover_images/{{ $post->cover_image }}" alt="...">
-                            </div>
+                            </div>                            
                         </div>
                     </div>
                     @endforeach

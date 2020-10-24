@@ -22,6 +22,7 @@ Route::get('/about', 'PagesController@about');
 Route::get('/contact', 'PagesController@contact');
 Route::get('/cards', 'PagesController@cards');
 Route::get('/carouselsitem', 'PagesController@carouselsitem');
+Route::get('/category/{Category_id}','CategoriesController@show');
 Route::resource('posts','PostsController');
 Auth::routes();
 

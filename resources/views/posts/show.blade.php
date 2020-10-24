@@ -26,7 +26,7 @@
 
         <div class="card border-primary mb-3">
             <div class="card-header">
-                <h1>{{ $post->category }} : {{ $post->title }}</h1>
+                <h1>{{ $post->category->name }} : {{ $post->title }}</h1>
             </div>
             <div class="inner text-center">
                 <img class="image-resize" src="/storage/cover_images/{{ $post->cover_image }}" alt="cover image">
@@ -35,8 +35,8 @@
                 <h4 class="card-title mb-4">{{ $post->description }}</h4>
                 <p class="card-text">{!! $post->body !!}</p>
                 <small>posted on {{ $post->created_at }} by {{ $post->user->name }}</small>
-                <h4>USD {{ $post->price }} / <small>{{ $post->puom }}</small></h4>
-                <h4>Quantity : {{ $post->quantity }} <small>{{ $post->quom }}</small></h4>
+                <h4>USD {{ $post->price }} / <small>{{ $post->priceunit }}</small></h4>
+                <h4>Delivery : {{ $post->delivery }} <small>{{ $post->deliveryunit }}</small></h4>
                 @if (!Auth::guest())
                     @if (Auth::user()->id == $post->user_id)
                         <div class="dflex">
@@ -53,7 +53,9 @@
                 @endif
             </div>
             <div class="card-footer">
-                <a href="/posts" class="btn btn-primary"> Go to Posts </a>
+                <a href="#" class="btn btn-primary float-right mr-3"> Order Now </a>
+                <a href="#" class="btn btn-primary float-right mr-3"> Contact {{ $post->user->name }}</a>
+                {{-- <a href="/posts" class="btn btn-primary"> Go to Posts </a> --}}
             </div>
 
             {{-- <div class="card-footer text-right">

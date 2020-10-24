@@ -35,26 +35,26 @@
                     </div>
                     <div class="col-lg-3 col-md-3 col-sm-6 col-xm-12">
                         <div class="form-group">
-                            {{Form::label('price','Price USD : ')}}
-                            {{Form::text('price','', ['class' => 'form-control', 'placeholder' => 'Price USD'])}}
+                            {{Form::label('price','USD : ')}}
+                            {{Form::text('price','', ['class' => 'form-control', 'placeholder' => 'Price'])}}
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-3 col-sm-6 col-xm-12">
                         <div class="form-group">
-                            {{Form::label('puom','Price UOM : ')}}
-                            {{Form::text('puom','', ['class' => 'form-control', 'placeholder' => 'Job / Project / Month / Day'])}}
+                            {{Form::label('priceunit','Price UOM : ')}}
+                            {{Form::text('priceunit','', ['class' => 'form-control', 'placeholder' => 'Job / Project / Campaign / App'])}}
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-3 col-sm-6 col-xm-12">
                         <div class="form-group">
-                            {{Form::label('quantity','Quantity : ')}}
-                            {{Form::text('quantity','', ['class' => 'form-control', 'placeholder' => 'number of person / job / project'])}}
+                            {{Form::label('delivery','Delivery : ')}}
+                            {{Form::text('delivery','', ['class' => 'form-control', 'placeholder' => 'number of Delivery by day'])}}
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-3 col-sm-6 col-xm-12">
                         <div class="form-group">
-                            {{Form::label('quom','Quantity UOM : ')}}
-                            {{Form::text('quom','', ['class' => 'form-control', 'placeholder' => 'Person / Job / Project/ Vacancy'])}}
+                            {{Form::label('deliveryunit','Delivery Unit : ')}}
+                            {{Form::text('deliveryunit','', ['class' => 'form-control', 'placeholder' => 'Day / Days'])}}
                         </div>
                     </div>
                     <div class="col-12">

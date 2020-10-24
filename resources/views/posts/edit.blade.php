@@ -14,7 +14,9 @@
                     </div> --}}
                     <div class="form-group">
                         {{ Form::label('category', 'Category : ') }}
-                        {{ Form::select('category', $categories , $post->category ,['class' => 'form-control'])}}                        
+                        {{ Form::select('category', [$post->category->id => $post->category->name] + $categories , $post->category->name,['class' => 'form-control'])}}   
+                        {{-- {{Form::select('gender',['male' => 'Male', 'female' => 'Female'], old('gender', $employee->gender),
+                        ['class' => 'form-control', 'placeholder' => 'Select Gender...'])}}                      --}}
                     </div>
                     <div class="form-group">
                         {{Form::label('title','Title')}}
@@ -33,16 +35,16 @@
                         {{Form::text('price',$post->price, ['class' => 'form-control', 'placeholder' => 'Price USD'])}}
                     </div>
                     <div class="form-group">
-                        {{Form::label('puom','Price UOM')}}
-                        {{Form::text('puom',$post->puom, ['class' => 'form-control', 'placeholder' => 'Job / Project / Month / Day'])}}
+                        {{Form::label('priceunit','Price Unit')}}
+                        {{Form::text('priceunit',$post->priceunit, ['class' => 'form-control', 'placeholder' => 'Job / Project / Campaign / App'])}}
                     </div>
                     <div class="form-group">
-                        {{Form::label('quantity','Quantity')}}
-                        {{Form::text('quantity',$post->quantity, ['class' => 'form-control', 'placeholder' => 'number of person / job / project'])}}
+                        {{Form::label('delivery','Delivery')}}
+                        {{Form::text('delivery',$post->delivery, ['class' => 'form-control', 'placeholder' => 'number of Delivery by day'])}}
                     </div>
                     <div class="form-group">
-                        {{Form::label('quom','Quantity UOM')}}
-                        {{Form::text('quom',$post->quom, ['class' => 'form-control', 'placeholder' => 'Person / Job / Project/ Vacancy'])}}
+                        {{Form::label('deliveryunit','Delivery Unit')}}
+                        {{Form::text('deliveryunit',$post->deliveryunit, ['class' => 'form-control', 'placeholder' => 'Day / Days'])}}
                     </div>
                     <div class="form-group">
                         {{Form::label('cover_image','Cover Image : ')}}

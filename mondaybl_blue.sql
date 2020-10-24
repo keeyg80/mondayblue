@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 29, 2020 at 01:11 AM
+-- Generation Time: Oct 24, 2020 at 01:30 PM
 -- Server version: 10.4.13-MariaDB
 -- PHP Version: 7.4.8
 
@@ -80,14 +80,14 @@ CREATE TABLE `password_resets` (
 
 CREATE TABLE `posts` (
   `id` bigint(20) UNSIGNED NOT NULL,
-  `category` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `category_id` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `title` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `description` mediumtext COLLATE utf8mb4_unicode_ci NOT NULL,
   `body` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
   `price` double(9,2) NOT NULL,
-  `puom` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `quantity` int(11) NOT NULL,
-  `quom` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `priceunit` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `delivery` int(11) NOT NULL,
+  `deliveryunit` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `user_id` bigint(20) NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
@@ -98,17 +98,10 @@ CREATE TABLE `posts` (
 -- Dumping data for table `posts`
 --
 
-INSERT INTO `posts` (`id`, `category`, `title`, `description`, `body`, `price`, `puom`, `quantity`, `quom`, `user_id`, `created_at`, `updated_at`, `cover_image`) VALUES
-(18, 'Graphic Designer', 'Product Advertisement Designer', 'Full time designer for our products including advertisement banner, leaflet and product labels.', '<p>Photodhop Illustrator and Lightroom</p>', 3500.89, 'Month', 1, 'Vacancy', 1, '2020-09-19 22:54:29', '2020-09-20 00:40:23', 'pexels-anthony-shkraba-4348401_1600591223.jpg'),
-(19, 'Graphic Designer', 'Banner Designer', 'Product Advertisement Banner Designer', '<p>Monthly Promotion Banner and leaflet design</p>', 3580.50, 'Month', 1, 'Vacancy', 1, '2020-09-19 23:00:01', '2020-09-19 23:00:01', 'noimage.jpg'),
-(20, 'Translator', 'E Documentation clerk', 'scan paper documents', '<p>scan company documents</p>', 2200.65, 'Month', 2, 'vacancies', 1, '2020-09-19 23:11:38', '2020-09-20 00:40:43', 'pexels-andrea-piacquadio-3831873_1600591243.jpg'),
-(21, 'Website Development', 'Story Editor', 'Need someone to edit my story', '<p>All in English</p>', 2000.00, 'Job', 1, 'Job', 1, '2020-09-19 23:18:39', '2020-09-20 00:46:08', 'pexels-cottonbro-4708905_1600591568.jpg'),
-(22, 'Social Media Advertising', 'I need someone to advertise my product in social media', 'All stationary and printers supplies', '<p>I need to have 200 orders on first month and atleast 7000 orders on fifth months onward.</p>', 15000.00, 'project', 2, 'vacancies', 1, '2020-09-20 00:37:58', '2020-09-20 00:43:19', 'pexels-anthony-shkraba-4348401_1600591399.jpg'),
-(23, 'Website Development', 'Web Application Developer', 'Company Intranet developer', '<p>Html, Javascript, CSS, JQuery, AJAX, API,</p>\r\n\r\n<p>our common web developed in php, asp, aspx.</p>\r\n\r\n<p>Framework: .NET, Angular, Laravel, React, Vues, Python, Spring Tools Suites.</p>\r\n\r\n<p>Dev Env: Visual Studio, Git</p>\r\n\r\n<p>DB: MySQL, MS SQL, Firebase, MongoDB</p>', 6500.00, 'Month', 1, 'Person', 2, '2020-09-23 07:48:46', '2020-09-23 07:48:46', 'pexels-ketut-subiyanto-4126724_1600868926.jpg'),
-(24, 'Website Development', 'Web Application Manager', 'Incharge of Web Development Team of 5 persons', '<ul>\r\n	<li>Keep track on project progress.</li>\r\n	<li>Keep Teams knowledge and skill up to date.</li>\r\n	<li>Teams motivation.</li>\r\n	<li>Backup projects.</li>\r\n	<li>Report to Management, Daily , Weekly, and Monthly</li>\r\n</ul>\r\n\r\n<p>&nbsp;</p>', 9500.00, 'Month', 1, 'person', 2, '2020-09-23 13:54:36', '2020-09-23 13:55:24', 'pexels-energepiccom-288477_1600869324.jpg'),
-(25, 'Website Development', 'create web app', 'company web intranet', '<ul>\r\n	<li>HR Portal</li>\r\n	<li>Accident Reporting</li>\r\n	<li>Purchase tracking</li>\r\n	<li>Service Tracking</li>\r\n	<li>Warehouse reporting</li>\r\n	<li>despatch tracking</li>\r\n</ul>', 10000.00, 'Project', 1, 'Project', 3, '2020-09-27 03:46:43', '2020-09-27 03:46:43', 'pexels-anthony-shkraba-4348401_1601178403.jpg'),
-(26, 'Graphic Designer', 'Company Desginer', 'Banner Desgin', '<ol>\r\n	<li>Photoshop</li>\r\n	<li>Illustrator</li>\r\n	<li>Ligthroom</li>\r\n	<li>swist</li>\r\n	<li>Adebe Acrobat</li>\r\n</ol>', 15000.00, 'Month', 2, 'Person', 4, '2020-09-27 03:57:22', '2020-09-27 03:57:22', 'pexels-energepiccom-288477_1601179042.jpg'),
-(27, 'Copywriting', 'Copywriter', 'Office Copywriter', '<ol>\r\n	<li>MS Word</li>\r\n	<li>MS Excel</li>\r\n	<li>MS planner</li>\r\n	<li>Adebe</li>\r\n</ol>', 1200.00, 'Month', 1, 'Person', 5, '2020-09-27 04:06:02', '2020-09-27 04:06:02', 'pexels-bongkarn-thanyakij-3740679_1601179562.jpg');
+INSERT INTO `posts` (`id`, `category_id`, `title`, `description`, `body`, `price`, `priceunit`, `delivery`, `deliveryunit`, `user_id`, `created_at`, `updated_at`, `cover_image`) VALUES
+(28, '2', 'Logo Design', 'I will do professional business logo design', '<p>1 simple HQ logo JPEG, PNG and vector files, full customer supports</p>\r\n\r\n<p><strong>2 Days Delivery</strong><strong>Unlimited Revisions</strong></p>\r\n\r\n<ul>\r\n	<li>1 Initial Concept Included</li>\r\n	<li>Source File</li>\r\n	<li>Logo Transparency</li>\r\n	<li>High Resolution</li>\r\n	<li>3D Mockup</li>\r\n	<li>Vector File</li>\r\n</ul>', 120.00, 'Project', 2, 'days', 1, '2020-10-20 12:11:28', '2020-10-24 09:30:41', 'logo_1603195888.jpg'),
+(29, '2', 'Vector Logo Design', 'I will design your professional logo and brand identity', '<p>1 prop. brand concept + color &amp; type application + visual graphic system application</p>\r\n\r\n<p><strong>15 Days Delivery</strong></p>\r\n\r\n<ul>\r\n	<li>1 Initial Concept Included</li>\r\n	<li>Source File</li>\r\n	<li>Logo Transparency</li>\r\n	<li>High Resolution</li>\r\n	<li>Stationery Designs</li>\r\n	<li>Social Media Kit</li>\r\n	<li>Vector File</li>\r\n</ul>', 600.00, 'project', 5, 'Days', 2, '2020-10-20 12:18:14', '2020-10-20 12:18:14', 'design_1603196294.jpg'),
+(30, '3', 'Wedding video editing', 'I will do beautiful wedding video editing', '<p>Final video length &gt; 2 to 4 minutes</p>\r\n\r\n<p><strong>2 Days Delivery</strong></p>\r\n\r\n<ul>\r\n	<li>Color Grading</li>\r\n	<li>Sound Design &amp; Mixing</li>\r\n	<li>Motion Graphics</li>\r\n</ul>', 200.00, 'Video', 2, 'days', 1, '2020-10-24 10:29:59', '2020-10-24 10:30:10', 'wedding_1603535410.jpg');
 
 -- --------------------------------------------------------
 
@@ -133,10 +126,7 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
 (1, 'Kee Yew Gin', 'keeyg80@gmail.com', NULL, '$2y$10$Y7NAg8KhCn7UdXCOOerHxe248cuLb1FT1mxSnI8QchSHlnshxUqfO', NULL, '2020-09-13 02:16:12', '2020-09-13 02:16:12'),
-(2, 'helen', 'helen@gmail.com', NULL, '$2y$10$zRmCtwfRBWuYhfyMMcXG3e4Y3b6UEgae1M4KpuTmuoixluvvInv6C', NULL, '2020-09-13 21:01:32', '2020-09-13 21:01:32'),
-(3, 'guest', 'guest@email.com', NULL, '$2y$10$T25pYb2q2BfqqRHvi5mpU.0QtwBPC3XIhPXLahmKAlDLUmnF43Ax.', NULL, '2020-09-27 03:44:50', '2020-09-27 03:44:50'),
-(4, 'test', 'test@email.com', NULL, '$2y$10$j7z5YyFwgnyI31dpj7g2D.vhPj1whigmSdDBplRLgOYT2vgs0/eWO', NULL, '2020-09-27 03:55:55', '2020-09-27 03:55:55'),
-(5, 'testme', 'testme@email.com', NULL, '$2y$10$9FN2pDUWjGj1B0GFaBOnxOPK0G33rpenDaolhFM3QosVs75gwNgP6', NULL, '2020-09-27 04:04:29', '2020-09-27 04:04:29');
+(2, 'helen', 'helen@gmail.com', NULL, '$2y$10$zRmCtwfRBWuYhfyMMcXG3e4Y3b6UEgae1M4KpuTmuoixluvvInv6C', NULL, '2020-09-13 21:01:32', '2020-09-13 21:01:32');
 
 --
 -- Indexes for dumped tables
@@ -193,7 +183,7 @@ ALTER TABLE `migrations`
 -- AUTO_INCREMENT for table `posts`
 --
 ALTER TABLE `posts`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
 
 --
 -- AUTO_INCREMENT for table `users`
