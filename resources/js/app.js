@@ -30,3 +30,6 @@ Vue.component('example-component', require('./components/ExampleComponent.vue').
 const app = new Vue({
     el: '#app',
 });
+
+
+const tl = gsap.timeline({ defaults : {ease: "power1.out"} });

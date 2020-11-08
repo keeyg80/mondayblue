@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use App\Post;
 use App\Category;
+use App\Review;
 use DB;
 class PostsController extends Controller
 {
@@ -32,12 +33,14 @@ class PostsController extends Controller
        /*  $posts = Post::where('category', Input::get('categoryselect'))
     ->orWhere('body', 'like', '%' . Input::get('bodysearch') . '%')->get(); */
        
-        $posts = Post::orderby('created_at','desc')->paginate(9);    
+        $posts = Post::where('activestatus','yes')->orderby('created_at','desc')->paginate(9);    
         //$posts = Post::where('category','freelancer')->get();
         //$posts = Post::orderby('created_at','desc')->take(3)->get();
         //$posts = Post::orderby('created_at','desc')->get();
         //$posts = Post::all();
-        return view('posts.index')->with('posts',$posts);
+        
+        $review = Review::all();
+        return view('posts.index')->with('posts',$posts)->with('reviews',$review);
     }
 
     /**
@@ -48,7 +51,7 @@ class PostsController extends Controller
     public function create()
     {
         //$categories = Category::all(['id', 'name']);
-        $categories = Category::get()->pluck('name', 'id')->toArray();
+        $categories = Category::where('activestatus','yes')->get()->pluck('name', 'id')->toArray();
         return view('posts.create')->with('categories',$categories);
         //$categories = Category::all(['id', 'name']);
         //return view('posts.create', compact('id', 'name'));
@@ -72,6 +75,7 @@ class PostsController extends Controller
             'priceunit' => 'required',
             'delivery' => 'required',
             'deliveryunit' => 'required',
+            'activestatus' => 'required',
             'cover_image' => 'image|nullable|max:1999'
         ]); 
         
@@ -103,6 +107,7 @@ class PostsController extends Controller
         $post->delivery = $request->input('delivery');
         $post->deliveryunit = $request->input('deliveryunit');
         $post->user_id = auth()->user()->id;
+        $post->activestatus = $request->input('activestatus');
         $post->cover_image = $fileNameToStore;
         $post ->save();
 
@@ -119,7 +124,8 @@ class PostsController extends Controller
     {
         $categories = Category::get()->pluck('name', 'id')->toArray();      
         $post = Post::find($id);
-        return view('posts.show')->with('post',$post)->with('categories',$categories);
+        $review = Review::where('post_id',$post->id)->get();
+        return view('posts.show')->with('post',$post)->with('categories',$categories)->with('reviews',$review);
     }
 
     /**
@@ -131,7 +137,7 @@ class PostsController extends Controller
     public function edit($id)
     {
         $post = Post::find($id);
-        $categories = Category::get()->pluck('name', 'id')->toArray();
+        $categories = Category::where('activestatus','yes')->get()->pluck('name', 'id')->toArray();
         //return view('posts.create')->with('categories',$categories);
         //check authorize post user
         if (auth()->user()->id !== $post->user_id){
@@ -159,6 +165,7 @@ class PostsController extends Controller
             'priceunit' => 'required',
             'delivery' => 'required',
             'deliveryunit' => 'required',
+            'activestatus' => 'required',
             'cover_image' => 'image|nullable|max:1999'
         ]); 
         
@@ -193,6 +200,7 @@ class PostsController extends Controller
         $post->delivery = $request->input('delivery');
         $post->deliveryunit = $request->input('deliveryunit');
         $post->user_id = auth()->user()->id;
+        $post->activestatus = $request->input('activestatus');
         if($request->hasFile('cover_image')){
             if($post->cover_image != 'noimage.jpg'){
                 //Delete image

@@ -5,10 +5,9 @@
     <div class="container">
         <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                <h2>Contact us</h2>                  
+                <h2 class="text-primary">Contact us</h2>                  
                 <p class="sub-heading"></p>
             </div>
-            
             <div class="col-lg-6 col-md-6 col-sm-12 mt-lg-5">
                 <div>
                     <h3>Corporate Office</h3>
@@ -34,7 +33,7 @@
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path fill-rule="evenodd" clip-rule="evenodd" d="M22 6C22 4.9 21.1 4 20 4H4C2.9 4 2 4.9 2 6V18C2 19.1 2.9 20 4 20H20C21.1 20 22 19.1 22 18V6ZM20 6L12 11L4 6H20ZM12 13L4 8V18H20V8L12 13Z" fill="#2F80ED"/>
                             </svg>                                    
-                        </strong>: <a href="#" > info@email.com </a>
+                        </strong>: info@email.com
                     </p>
                 </div>
             </div>

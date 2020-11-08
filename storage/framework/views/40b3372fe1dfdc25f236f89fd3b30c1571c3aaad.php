@@ -3,15 +3,15 @@
 <?php $__env->startSection('content'); ?>
 
     <!-- CSS only -->
-    <link rel="stylesheet" href="<?php echo e(asset('css/carousel.css')); ?>">
+    <link rel="stylesheet" href="<?php echo e(asset('css/carousel.css'), false); ?>">
 
 
 <!-- Javascript -->
-<script src="<?php echo e(asset('js/jquery-3.3.1.min.js')); ?>"></script>
-<script src="<?php echo e(asset('js/jquery.backstretch.min.js')); ?>"></script>
+<script src="<?php echo e(asset('js/jquery-3.3.1.min.js'), false); ?>"></script>
+<script src="<?php echo e(asset('js/jquery.backstretch.min.js'), false); ?>"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
-<script src="<?php echo e(asset('js/wow.min.js')); ?>"></script>
-<script src="<?php echo e(asset('js/scripts.js')); ?>"></script>
+<script src="<?php echo e(asset('js/wow.min.js'), false); ?>"></script>
+<script src="<?php echo e(asset('js/scripts.js'), false); ?>"></script>
 
 
 <div class="top-content">

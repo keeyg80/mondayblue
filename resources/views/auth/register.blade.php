@@ -16,7 +16,9 @@
 
                             <div class="col-md-6">
                                 <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
-
+                                <input id="role" type="hidden" class="form-control " name="role" value="user">
+                                <input id="activestatus" type="hidden" class="form-control " name="activestatus" value="yes">
+                                <input id="cover_image" type="hidden" class="form-control " name="cover_image" value="noimage.jpg">
                                 @error('name')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>

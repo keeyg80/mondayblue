@@ -7,16 +7,12 @@
                 <h3>Edit Post</h3>
             </div>
             <div class="col-12">
-                {!! Form::open(['action' => ['PostsController@update', $post -> id], 'method' => 'POST', 'enctype' => 'multipart/form-data']) !!}
-                    {{-- <div class="form-group">
-                        {{Form::label('category','Category')}}
-                        {{Form::text('category',$post->category, ['class' => 'form-control', 'placeholder' => 'Category'])}}
-                    </div> --}}
+                {!! Form::open(['action' => ['PostsController@update', $post -> id], 'method' => 'POST', 'enctype' => 'multipart/form-data','onsubmit' => 'return confirm("Are You Sure ?")']) !!}
+                    
                     <div class="form-group">
                         {{ Form::label('category', 'Category : ') }}
                         {{ Form::select('category', [$post->category->id => $post->category->name] + $categories , $post->category->name,['class' => 'form-control'])}}   
-                        {{-- {{Form::select('gender',['male' => 'Male', 'female' => 'Female'], old('gender', $employee->gender),
-                        ['class' => 'form-control', 'placeholder' => 'Select Gender...'])}}                      --}}
+                        
                     </div>
                     <div class="form-group">
                         {{Form::label('title','Title')}}
@@ -45,6 +41,10 @@
                     <div class="form-group">
                         {{Form::label('deliveryunit','Delivery Unit')}}
                         {{Form::text('deliveryunit',$post->deliveryunit, ['class' => 'form-control', 'placeholder' => 'Day / Days'])}}
+                    </div>
+                    <div class="form-group">
+                        {{Form::label('activestatus','Active : ')}}
+                        {{Form::select('activestatus', [$post->activestatus] + ['yes' => 'yes', 'no' => 'no'], $post->activestatus,['class' => 'form-control'])}}
                     </div>
                     <div class="form-group">
                         {{Form::label('cover_image','Cover Image : ')}}

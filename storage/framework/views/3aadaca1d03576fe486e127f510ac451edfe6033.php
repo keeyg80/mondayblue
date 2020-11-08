@@ -42,11 +42,11 @@
 
 <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm static-top sticky-top">
     <div class="container">
-        <a class="navbar-brand" href="<?php echo e(url('/')); ?>">
-            <?php echo e(config('app.name', 'MondayBlue')); ?>
+        <a class="navbar-brand" href="<?php echo e(url('/'), false); ?>">
+            <?php echo e(config('app.name', 'MondayBlue'), false); ?>
 
         </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="<?php echo e(__('Toggle navigation')); ?>">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="<?php echo e(__('Toggle navigation'), false); ?>">
             <span class="navbar-toggler-icon"></span>
         </button>
 
@@ -74,35 +74,42 @@
                 <!-- Authentication Links -->
                 <?php if(auth()->guard()->guest()): ?>
                     <li class="nav-item">
-                        <a class="nav-link" href="<?php echo e(route('login')); ?>"><?php echo e(__('Login')); ?></a>
+                        <a class="nav-link" href="<?php echo e(route('login'), false); ?>"><?php echo e(__('Login'), false); ?></a>
                     </li>
                     <?php if(Route::has('register')): ?>
                         <li class="nav-item">
-                            <a class="nav-link" href="<?php echo e(route('register')); ?>"><?php echo e(__('Register')); ?></a>
+                            <a class="nav-link" href="<?php echo e(route('register'), false); ?>"><?php echo e(__('Register'), false); ?></a>
                         </li>
                     <?php endif; ?>
                 <?php else: ?>
                     <li class="nav-item">
                         <a class="nav-link js-scroll-trigger" href="/dashboard">Dashboard</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link js-scroll-trigger" href="/posts/create">Create Post</a>
+                    <?php if(Auth::user()->role == 'admin'): ?>
+                    
+                    <li class="nav-item dropdown">
+                      <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Administrator</a>
+                      <div class="dropdown-menu">
+                        <a class="dropdown-item" href="/administrator/categories">Categories</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="/administrator/users">Users</a>
+                      </div>
                     </li>
+                    <?php endif; ?>
                     <li class="nav-item dropdown">
                         <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                            <?php echo e(Auth::user()->name); ?>
+                            <?php echo e(Auth::user()->name, false); ?>
 
                         </a>
-
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="<?php echo e(route('logout')); ?>"
+                            <a class="dropdown-item" href="<?php echo e(route('logout'), false); ?>"
                                onclick="event.preventDefault();
                                              document.getElementById('logout-form').submit();">
-                                <?php echo e(__('Logout')); ?>
+                                <?php echo e(__('Logout'), false); ?>
 
                             </a>
 
-                            <form id="logout-form" action="<?php echo e(route('logout')); ?>" method="POST" class="d-none">
+                            <form id="logout-form" action="<?php echo e(route('logout'), false); ?>" method="POST" class="d-none">
                                 <?php echo csrf_field(); ?>
                             </form>
                         </div>

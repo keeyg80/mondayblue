@@ -25,369 +25,119 @@
             object-fit: cover;
             object-position: center center;
         }
-    </style>
+        .branding{
+            position: absolute;
+            font-size: 4rem;
+            font-weight: bolder;
+            top: 0;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            font-family: cursive;
+        }
+        .brandingtext{
+            position: absolute;
+            font-size: 2rem;
+            font-weight: lighter;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-20%);
+        }
+        .categorycard{
 
+            -webkit-animation: fadein 1s; /* Safari, Chrome and Opera > 12.1 */
+                -moz-animation: fadein 1s; /* Firefox < 16 */
+                    -ms-animation: fadein 1s; /* Internet Explorer */
+                    -o-animation: fadein 1s; /* Opera < 12.1 */
+                        animation: fadein 1s;
+        }
+        @keyframes fadein {
+            from { opacity: 0; }
+            to   { opacity: 1; }            
+            from { transform: translateY(1%); }
+            to   { transform: translateY(0%); }
+        }
+
+        /* Firefox < 16 */
+        @-moz-keyframes fadein {
+            from { opacity: 0; }
+            to   { opacity: 1; }           
+            from { transform: translateY(1%); }
+            to   { transform: translateY(0%); }
+        }
+
+        /* Safari, Chrome and Opera > 12.1 */
+        @-webkit-keyframes fadein {
+            from { opacity: 0; }
+            to   { opacity: 1; }           
+            from { transform: translateY(1%); }
+            to   { transform: translateY(0%); }
+        }
+
+        /* Internet Explorer */
+        @-ms-keyframes fadein {
+            from { opacity: 0; }
+            to   { opacity: 1; }           
+            from { transform: translateY(1%); }
+            to   { transform: translateY(0%); }
+        }
+
+        /* Opera < 12.1 */
+        @-o-keyframes fadein {
+            from { opacity: 0; }
+            to   { opacity: 1; }           
+            from { transform: translateY(1%); }
+            to   { transform: translateY(0%); }
+        }
+
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
     <div class="jumbotron jumbotronbackground">
         <div class="container">
             <div class="row">
-                {{-- <div class="col-lg-6 p-lg-5 mx-auto my-5">
-                    <div class="card border-primary text-left">
-                        <div class="card-header">Search Category</div>
-                        <div class="card-body">
-                            {!! Form::open(['action' => 'PostsController@index', 'method' => 'POST']) !!}
-                            <div class="form-group">
-                                {{ Form::label('category', 'Category : ') }}
-                                {{ Form::select('category', [null => 'Please Select'] + $categories, '', ['class' => 'form-control']) }}
-                            </div>
-                            <div class="form-group">
-                                {{ Form::label('created_at', 'Posting Date') }}
-                                {{ Form::text('created_at', '', ['class' => 'form-control', 'placeholder' => 'posting date']) }}
-                            </div>
-                            {{ Form::submit('Search', ['class' => 'btn btn-primary']) }}
-                            {!! Form::close() !!}
-                        </div>
-                    </div>
-                </div> --}}
-                <div class="col-lg-6 p-lg-5 mx-auto my-5">
-                    <h1 class="display-4 font-weight-normal">MondayBlue</h1>
-                    <p class="lead font-weight-normal">Hiring professional and freelancer portal</p>
+                <div class="col-lg-12 p-lg-5 mx-auto my-5">
+                    <h1 class="branding">Monday<span class="text-primary">Blue</span></h1>
+                    <p class="brandingtext">Hiring professional and freelancer portal</p>
                 </div>
             </div>
         </div>
         <div class="product-device shadow-sm d-none d-md-block"></div>
         <div class="product-device product-device-2 shadow-sm d-none d-md-block"></div>
     </div>
-
-    {{-- <div class="container">
+    <div class="container">
         <div class="row">
-            <div class="col-lg-4 col-md-4 col-sm-6 p-2">
-                <div class="card shadow bg-white rounded">
-                    <a href="#" class="position-relative">
-                        <img src="https://placeimg.com/640/360/animals/sepia" class="card-img-top" alt="...">
-                        <div class="card-img-overlay text-center d-flex">
-                            <h2 class="w-100 align-self-center text-white mx-auto "
-                                style="text-shadow: 2px 2px 4px #000000;">Graphic Designer</h2>
-                        </div>
-                    </a>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-4 col-sm-6 p-2">
-                <div class="card shadow bg-white rounded">
-                    <a href="#" class="position-relative">
-                        <img src="https://placeimg.com/640/360/animals" class="card-img-top" alt="...">
-                        <div class="card-img-overlay text-center d-flex">
-                            <h2 class="w-100 align-self-center text-white mx-auto "
-                                style="text-shadow: 2px 2px 4px #000000;">Video Editing</h2>
-                        </div>
-                    </a>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-4 col-sm-6 p-2">
-                <div class="card shadow bg-white rounded">
-                    <a href="#" class="position-relative">
-                        <img src="https://placeimg.com/640/360/arch/grayscale" class="card-img-top" alt="...">
-                        <div class="card-img-overlay text-center d-flex">
-                            <h2 class="w-100 align-self-center text-white mx-auto "
-                                style="text-shadow: 2px 2px 4px #000000;">Social Media Advertising</h2>
-                        </div>
-                    </a>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-4 col-sm-6 p-2">
-                <div class="card shadow bg-white rounded">
-                    <a href="#" class="position-relative">
-                        <img src="https://placeimg.com/640/360/arch/sepia" class="card-img-top" alt="...">
-                        <div class="card-img-overlay text-center d-flex">
-                            <h2 class="w-100 align-self-center text-white mx-auto "
-                                style="text-shadow: 2px 2px 4px #000000;">Website Development</h2>
-                        </div>
-                    </a>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-4 col-sm-6 p-2">
-                <div class="card shadow bg-white rounded">
-                    <a href="#" class="position-relative">
-                        <img src="https://placeimg.com/640/360/nature/sepia" class="card-img-top" alt="...">
-                        <div class="card-img-overlay text-center d-flex">
-                            <h2 class="w-100 align-self-center text-white mx-auto "
-                                style="text-shadow: 2px 2px 4px #000000;">Copywriting</h2>
-                        </div>
-                    </a>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-4 col-sm-6 p-2">
-                <div class="card shadow bg-white rounded">
-                    <a href="#" class="position-relative">
-                        <img src="https://placeimg.com/640/360/people/sepia" class="card-img-top" alt="...">
-                        <div class="card-img-overlay text-center d-flex">
-                            <h2 class="w-100 align-self-center text-white mx-auto "
-                                style="text-shadow: 2px 2px 4px #000000;">Translator</h2>
-                        </div>
-                    </a>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-4 col-sm-6 p-2">
-                <div class="card shadow bg-white rounded">
-                    <a href="#" class="position-relative">
-                        <img src="https://placeimg.com/640/360/tech/sepia" class="card-img-top" alt="...">
-                        <div class="card-img-overlay text-center d-flex">
-                            <h2 class="w-100 align-self-center text-white mx-auto "
-                                style="text-shadow: 2px 2px 4px #000000;">2D/3D Animator</h2>
-                        </div>
-                    </a>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-4 col-sm-6 p-2">
-                <div class="card shadow bg-white rounded">
-                    <a href="#" class="position-relative">
-                        <img src="https://placeimg.com/640/360/nature/grayscale" class="card-img-top" alt="...">
-                        <div class="card-img-overlay text-center d-flex">
-                            <h2 class="w-100 align-self-center text-white mx-auto "
-                                style="text-shadow: 2px 2px 4px #000000;">Storyboard Artist</h2>
-                        </div>
-                    </a>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-4 col-sm-6 p-2">
-                <div class="card shadow bg-white rounded">
-                    <a href="#" class="position-relative">
-                        <img src="https://placeimg.com/640/360/people/grayscale" class="card-img-top" alt="...">
-                        <div class="card-img-overlay text-center d-flex">
-                            <h2 class="w-100 align-self-center text-white mx-auto "
-                                style="text-shadow: 2px 2px 4px #000000;">etc</h2>
-                        </div>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </div> --}}
-    <style>
-        /* .mycards > div > div.card {
-                        height: calc(100% - 15px);
-                        margin-bottom: 15px;
-                    } */
-
-    </style>
-    <div class="container  ">
-        <div class="row mycards">
-            <div class="col-lg-6 col-md-6 col-sm-6 p-2">
-                <div class="card shadow bg-white rounded">
-                    <a href="/category/2" class="position-relative">
-                        <img src="../img/c1.jpg" class="card-img-top service-image" alt="...">
-                        <div class="card-img-overlay text-center d-flex">
-                            <h2 class="w-100 align-self-center text-white mx-auto "
-                                style="text-shadow: 0 0 5px #000000;">Graphic Designer</h2>
-                        </div>
-                    </a>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-3 col-sm-6 p-2">
-                <div class="card shadow bg-white rounded">
-                    <a href="/category/3" class="position-relative">
-                        <img src="../img/c2.jpg" class="card-img-top service-image" alt="...">
-                        <div class="card-img-overlay text-center d-flex">
-                            <h2 class="w-100 align-self-center text-white mx-auto "
-                                style="text-shadow: 0 0 5px #000000;">Video Editing</h2>
-                        </div>
-                    </a>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-3 col-sm-6 p-2">
-                <div class="card shadow bg-white rounded">
-                    <a href="/category/4" class="position-relative">
-                        <img src="../img/c3.jpg" class="card-img-top service-image" alt="...">
-                        <div class="card-img-overlay text-center d-flex">
-                            <h2 class="w-100 align-self-center text-white mx-auto "
-                                style="text-shadow: 0 0 5px #000000;">Social Media Advertising</h2>
-                        </div>
-                    </a>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-3 col-sm-6 p-2">
-                <div class="card shadow bg-white rounded">
-                    <a href="/category/5" class="position-relative">
-                        <img src="../img/c4.jpg" class="card-img-top service-image" alt="...">
-                        <div class="card-img-overlay text-center d-flex">
-                            <h2 class="w-100 align-self-center text-white mx-auto "
-                                style="text-shadow: 0 0 5px #000000;">2D/3D Editor</h2>
-                        </div>
-                    </a>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-3 col-sm-6 p-2">
-                <div class="card shadow bg-white rounded">
-                    <a href="/category/6" class="position-relative">
-                        <img src="../img/c5.jpg" class="card-img-top service-image" alt="...">
-                        <div class="card-img-overlay text-center d-flex">
-                            <h2 class="w-100 align-self-center text-white mx-auto "
-                                style="text-shadow: 0 0 5px #000000;">Copywriting</h2>
-                        </div>
-                    </a>
-                </div>
-            </div>
-            <div class="col-lg-6 col-md-6 col-sm-6 p-2">
-                <div class="card shadow bg-white rounded">
-                    <a href="/category/7" class="position-relative">
-                        <img src="../img/c6.jpg" class="card-img-top service-image" alt="...">
-                        <div class="card-img-overlay text-center d-flex">
-                            <h2 class="w-100 align-self-center text-white mx-auto "
-                                style="text-shadow: 0 0 5px #000000;">Marketing Campaign Manager</h2>
-                        </div>
-                    </a>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-3 col-sm-6 p-2">
-                <div class="card shadow bg-white rounded">
-                    <a href="/category/8" class="position-relative">
-                        <img src="../img/c7.jpg" class="card-img-top service-image" alt="...">
-                        <div class="card-img-overlay text-center d-flex">
-                            <h2 class="w-100 align-self-center text-white mx-auto "
-                                style="text-shadow: 0 0 5px #000000;">Translator</h2>
-                        </div>
-                    </a>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-3 col-sm-6 p-2">
-                <div class="card shadow bg-white rounded">
-                    <a href="/category/9" class="position-relative">
-                        <img src="../img/c8.jpg" class="card-img-top service-image" alt="...">
-                        <div class="card-img-overlay text-center d-flex">
-                            <h2 class="w-100 align-self-center text-white mx-auto "
-                                style="text-shadow: 0 0 5px #000000;">Web Developer</h2>
-                        </div>
-                    </a>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-3 col-sm-6 p-2">
-                <div class="card shadow bg-white rounded">
-                    <a href="/category/10" class="position-relative">
-                        <img src="../img/c9.jpg" class="card-img-top service-image" alt="...">
-                        <div class="card-img-overlay text-center d-flex">
-                            <h2 class="w-100 align-self-center text-white mx-auto "
-                                style="text-shadow: 0 0 5px #000000;">App Developer</h2>
-                        </div>
-                    </a>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-3 col-sm-6 p-2">
-                <div class="card shadow bg-white rounded">
-                    <a href="/category/11" class="position-relative">
-                        <img src="../img/c10.jpg" class="card-img-top service-image" alt="...">
-                        <div class="card-img-overlay text-center d-flex">
-                            <h2 class="w-100 align-self-center text-white mx-auto "
-                                style="text-shadow: 0 0 5px #000000;">Online Store Campaign Manager</h2>
-                        </div>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </div>   
-    <div class="container mt-5">
-        {{-- <h2 style="font-size: 28px; line-height: 40px;">Service Posts</h2>
-        <p style="font-size: 18px; line-height: 30px;" class="sub-heading"></p>        
-        <div class="row mb-2">
-            @if (count($posts) >= 1)
-                @foreach ($posts as $post)
-                    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 mb-3">
-                        <div class="card h-100">
-                            <div class="inner">
-                                <img src="/storage/cover_images/{{ $post->cover_image }}" class="card-img-top image-resize" alt="...">
-                            </div>
-                            <div class="card-body">
-                                <h5 class="card-title">{{ $post->title }}</h5>
-                                <p class="card-text">{{ $post->description }}</p>
-                            </div>
-                            <ul class="list-group list-group-flush">
-                                <li class="list-group-item">USD {{ $post->price }} / <small
-                                        class="text-muted">{{ $post->puom }}</small></li>
-                                <li class="list-group-item">{{ $post->quantity }} <small>{{ $post->quom }}</small></li>
-                            </ul>
-                            <div class="card-footer bg-transparent">
-                                <a href="/posts/{{ $post->id }}" class="btn btn-lg btn-block btn-primary"> Read More </a>
-                            </div>
-                        </div>
-                    </div>
-                @endforeach
-            @else
-                <p>No posts found</p>
-            @endif --}}
-
-            {{-- <div class="col-md-6">
-                <div
-                    class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
-                    <div class="col p-4 d-flex flex-column position-static">
-                        <strong class="d-inline-block mb-2 text-primary">Freelancer</strong>
-                        <h3 class="mb-0">Logo Designing</h3>
-                        <div class="mb-1 text-muted">Posted on : Sept 3 2020</div>
-                        <p class="card-text mb-auto">I need someone to design my company's logo.</p>
-                        <a href="#" class="stretched-link">Continue reading</a>
-                    </div>
-                    <div class="col-auto d-none d-lg-block">
-                        <svg class="bd-placeholder-img" width="200" height="250" xmlns="http://www.w3.org/2000/svg"
-                            preserveAspectRatio="xMidYMid slice" focusable="false" role="img"
-                            aria-label="Placeholder: Thumbnail">
-                            <title>Placeholder</title>
-                            <rect width="100%" height="100%" fill="#55595c" /><text x="50%" y="50%" fill="#eceeef"
-                                dy=".3em">Thumbnail</text>
-                        </svg>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div
-                    class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
-                    <div class="col p-4 d-flex flex-column position-static">
-                        <strong class="d-inline-block mb-2 text-success">Hiring</strong>
-                        <h3 class="mb-0">Web Designer</h3>
-                        <div class="mb-1 text-muted">Posted on Sept 5 2020</div>
-                        <p class="mb-auto">We are hiring web designer.</p>
-                        <a href="#" class="stretched-link">Continue reading</a>
-                    </div>
-                    <div class="col-auto d-none d-lg-block">
-                        <svg class="bd-placeholder-img" width="200" height="250" xmlns="http://www.w3.org/2000/svg"
-                            preserveAspectRatio="xMidYMid slice" focusable="false" role="img"
-                            aria-label="Placeholder: Thumbnail">
-                            <title>Placeholder</title>
-                            <rect width="100%" height="100%" fill="#55595c" /><text x="50%" y="50%" fill="#eceeef"
-                                dy=".3em">Thumbnail</text>
-                        </svg>
-                    </div>
-                </div>
-            </div> --}}
-        </div>
-    </div>
-
-    {{-- <div class="container">
-        <h3 class="title m-b-md">
-            Uploaded Posts
-            </h1>
-            <div class="row">
-                @if (count($posts) >= 1)
-                    @foreach ($posts as $post)
-                        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 mb-3">
-                            <div
-                                class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-100 position-relative">
-                                <div class="col p-4 d-flex flex-column position-static">
-                                    <strong class="d-inline-block mb-2 text-success">{{ $post->category }}</strong>
-                                    <h3 class="mb-0">{{ $post->title }}</h3>
-                                    <div class="mb-1 text-muted">Posted on : {{ $post->created_at }}</div>
-                                    <p class="mb-2">{{ $post->description }}</p>
-                                    <small class="text-secondary mb-auto">{!! $post->body !!}</small>
-                                    <a href="/posts/{{ $post->id }}" class="stretched-link">Continue reading</a>
-                                </div>
+            @if (count($categories) > 0)
+                    @foreach ($categories as $category)
+                        <div class="col-lg-{{$category->imagewidth}} col-md-6 col-sm-12 p-2">
+                            <div class="card categorycard shadow bg-white rounded">
+                                <a href="/category/{{ $category->id }} " class="position-relative">
+                                    <img src="/storage/cover_images/{{ $category->cover_image }} " class="card-img-top service-image" alt="...">
+                                    <div class="card-img-overlay text-center d-flex">
+                                        <h2 class="w-100 align-self-center text-white mx-auto "
+                                            style="text-shadow: 0 0 5px #000000;">{{ $category->name }} </h2>
+                                    </div>
+                                </a>
                             </div>
                         </div>
                     @endforeach
                 @else
-                    <p>No posts found</p>
+                    <div class="col-12 p-2">
+                        <div class="card shadow bg-white rounded">
+                            <a href="/" class="position-relative">
+                                <div class="card-img-overlay text-center d-flex">
+                                    <h2 class="w-100 align-self-center text-white mx-auto "
+                                        style="text-shadow: 0 0 5px #000000;">No Category Yet.</h2>
+                                </div>
+                            </a>
+                        </div>
+                    </div> 
                 @endif
-            </div>
-    </div> --}}
-
+        </div>
+    </div>
+    <div class="container mt-5">
     <div class="container">
-        <h2 style="font-size: 28px; line-height: 40px;">Service Posts</h2>
+        <h2 style="font-size: 28px; line-height: 40px;">Services</h2>
         <p style="font-size: 18px; line-height: 30px;" class="sub-heading"></p>  
-        <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+        <div id="carouselExampleControls" class="carousel slide carousel-multi-item" data-ride="carousel">
             <div class="carousel-inner">
                 <div class="carousel-item active">
                 <img class="d-block w-100 service-image" style="height:300px;" src="../img/carouselbg.jpg"  alt="Starter">
@@ -403,14 +153,25 @@
                 @if (count($posts) > 0)
                     @foreach ($posts as $post)
                     <div class="carousel-item">
-                        <div class="row no-gutters rounded overflow-hidden flex-md-row mb-4 shadow-sm position-relative">                            
-                            <div class="col p-4 d-flex flex-column position-static text-center" >
-                                <strong class="h1 d-inline-block mb-2 text-primary">{{ $post->category->name }} </strong>
-                                <h2 class="mb-0">{{ $post->title }}</h2>
-                                <h3 class="mb-0">{{ $post->description }}</h3>
-                                <div class="mb-1 text-muted">{{ $post->created_at }} by {{ $post->user->name }}</div>
-                                <p class="h1 card-text mb-auto">USD {!! $post->price !!} / {!! $post->priceunit !!} </p>
-                                <a href="/posts/{{ $post->id }}" class="stretched-link"> Delivery : {!! $post->delivery !!}  {!! $post->deliveryunit !!}</a>
+                        <div class="row no-gutters rounded bg-dark overflow-hidden flex-md-row mb-4 shadow-sm position-relative">                            
+                            <div class="col p-3 d-flex flex-column position-static text-center bg-light" >
+                                <strong class="h3 d-inline-block mb-2 text-primary">{{ $post->category->name }} </strong>
+                                <h5 class="mb-0">{{ $post->title }}</h5>
+                                @if (count($post->reviews) > 0)
+                                <p>
+                                <small>Reviews</small> <span class="badge badge-pill badge-primary">{{(count($post->reviews))}}</span>                                 
+                                <small><span style="color: yellow; text-shadow: 0px 0px 2px #000000;">★</span> {{number_format((float)(($post->reviews->sum('rating'))/(count($post->reviews))), 1, '.', '')}} / 5</small>
+                                </p>
+                                @endif                                
+                                <h5 class="mb-0">{{ $post->description }}</h5>
+                                <small class="text-muted">{{ $post->created_at }} by {{ $post->user->name }}</small>
+                                <font class="h4 card-text mb-auto">
+                                    USD {!! $post->price !!} / {!! $post->priceunit !!} 
+                                </font>
+                                <font>
+                                    Delivery : {!! $post->delivery !!}  {!! $post->deliveryunit !!}
+                                </font>
+                                <a href="/posts/{{ $post->id }}" class="stretched-link"> </a>
                             </div>
                             <div class="col-auto d-none d-lg-block">
                                 <img class="service-image" src="/storage/cover_images/{{ $post->cover_image }}" alt="...">
@@ -420,7 +181,7 @@
                     @endforeach
                 @else
                     <div class="carousel-item">
-                        <img class="d-block w-100 image-resize" src="https://placeimg.com/800/200/arc/grayscale" alt="No Post">
+                        <img class="d-block w-100 image-resize" src="https://placeimg.com/800/300/arc/grayscale" alt="No Post">
                         <div class="carousel-caption d-none d-md-block">
                             <h5>No post found</h5>
                         </div>
